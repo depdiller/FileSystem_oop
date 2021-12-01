@@ -7,7 +7,7 @@
 
 class Dir : AbstractFile {
 private:
-    int * virtAdr;
+    int * virtualAdr;
 private:
     Dir();
     void ls(Dir);

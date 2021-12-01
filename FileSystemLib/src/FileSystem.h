@@ -7,9 +7,9 @@
 
 class FileSystem {
 private:
-    AbstractFile& homeDir;
-    AbstractFile& rootDir;
-    std::vector<User> TableOfUsrs;
+    Dir& homeDir;
+    Dir& rootDir;
+    std::vector<User> TableOfUsers;
     User &currUser;
 public:
     FileSystem(User&);

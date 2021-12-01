@@ -3,4 +3,5 @@ project(FileSystem)
 
 set(CMAKE_CXX_STANDARD 14)
 
+add_subdirectory(FileSystemLib)
 add_executable(FileSystem main.cpp)

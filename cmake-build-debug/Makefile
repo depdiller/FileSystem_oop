@@ -128,6 +128,19 @@ FileSystem/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FileSystem.dir\build.make CMakeFiles/FileSystem.dir/build
 .PHONY : FileSystem/fast
 
+#=============================================================================
+# Target rules for targets named FileSystemLib
+
+# Build rule for target.
+FileSystemLib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 FileSystemLib
+.PHONY : FileSystemLib
+
+# fast build rule for target.
+FileSystemLib/fast:
+	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/build
+.PHONY : FileSystemLib/fast
+
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
@@ -161,6 +174,7 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... FileSystem
+	@echo ... FileSystemLib
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

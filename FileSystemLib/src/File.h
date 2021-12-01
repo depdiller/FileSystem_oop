@@ -5,16 +5,23 @@
 #ifndef FILESYSTEM_FILE_H
 #define FILESYSTEM_FILE_H
 
-class File : AbstractFile{
-protected:
-    string dateAndTime;
-    vector<Descriptor> TableOfStreams;
-public:
-    File();
-    void getDateAndTime;
-    void OpenFile();
-    void getStreams;
-    void virtualInformations;
-};
+#include "AbstractFile.h"
+#include <vector>
+
+namespace System {
+    class File : public AbstractFile {
+    protected:
+        std::string dateAndTime;
+        std::vector<Descriptor> TableOfStreams;
+    public:
+        File(unsigned int );
+        void getDateAndTime;
+
+        void OpenFile();
+
+        void getStreams;
+        void virtualInformation;
+    };
+}
 
 #endif //FILESYSTEM_FILE_H

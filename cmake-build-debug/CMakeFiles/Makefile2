@@ -63,15 +63,32 @@ CMAKE_BINARY_DIR = C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug
 
 # The main recursive "all" target.
 all: CMakeFiles/FileSystem.dir/all
+all: FileSystemLib/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: FileSystemLib/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/FileSystem.dir/clean
+clean: FileSystemLib/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory FileSystemLib
+
+# Recursive "all" directory target.
+FileSystemLib/all: FileSystemLib/CMakeFiles/FileSystemLib.dir/all
+.PHONY : FileSystemLib/all
+
+# Recursive "preinstall" directory target.
+FileSystemLib/preinstall:
+.PHONY : FileSystemLib/preinstall
+
+# Recursive "clean" directory target.
+FileSystemLib/clean: FileSystemLib/CMakeFiles/FileSystemLib.dir/clean
+.PHONY : FileSystemLib/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/FileSystem.dir
@@ -98,6 +115,32 @@ FileSystem: CMakeFiles/FileSystem.dir/rule
 CMakeFiles/FileSystem.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FileSystem.dir\build.make CMakeFiles/FileSystem.dir/clean
 .PHONY : CMakeFiles/FileSystem.dir/clean
+
+#=============================================================================
+# Target rules for target FileSystemLib/CMakeFiles/FileSystemLib.dir
+
+# All Build rule for target.
+FileSystemLib/CMakeFiles/FileSystemLib.dir/all:
+	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/depend
+	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6 "Built target FileSystemLib"
+.PHONY : FileSystemLib/CMakeFiles/FileSystemLib.dir/all
+
+# Build rule for subdir invocation for target.
+FileSystemLib/CMakeFiles/FileSystemLib.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 FileSystemLib/CMakeFiles/FileSystemLib.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 0
+.PHONY : FileSystemLib/CMakeFiles/FileSystemLib.dir/rule
+
+# Convenience name for target.
+FileSystemLib: FileSystemLib/CMakeFiles/FileSystemLib.dir/rule
+.PHONY : FileSystemLib
+
+# clean rule for target.
+FileSystemLib/CMakeFiles/FileSystemLib.dir/clean:
+	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/clean
+.PHONY : FileSystemLib/CMakeFiles/FileSystemLib.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

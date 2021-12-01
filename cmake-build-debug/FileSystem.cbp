@@ -5,7 +5,7 @@
 		<Option title="FileSystem"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\FileSystemLib\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug"/>
@@ -79,12 +79,89 @@
 					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="FileSystemLib">
+				<Option output="C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/libFileSystemLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 FileSystemLib"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="FileSystemLib/fast">
+				<Option output="C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/libFileSystemLib.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 FileSystemLib/fast"/>
+					<CompileFile command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/PROGRA~1/MINGW-~1/X86_64~1.0-P/mingw64/bin/mingw32-make.exe -f &quot;C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/AbstractFile.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/AbstractFile.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Descriptor.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Dir.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/EncryptFile.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/File.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/File.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/FileSystem.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/FileSystem.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/User.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/main.cpp">
 			<Option target="FileSystem"/>
 		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\FileSystemLib\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
