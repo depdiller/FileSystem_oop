@@ -5,14 +5,25 @@
 #ifndef FILESYSTEM_USER_H
 #define FILESYSTEM_USER_H
 
-class User {
-private:
-    unsigned int userId;
-    string name;
-    string key;
-public:
-    User();
-    changeKey();
-};
+#include <iostream>
+
+namespace System {
+    class User {
+    private:
+        size_t userId;
+        std::string name;
+        size_t key;
+    public:
+        User(std::string name);
+        User(std::string name, size_t key);
+        // getters
+        User& setKey(size_t newKey);
+        User& setName(std::string newName);
+        // setters
+        std::string getName() const { return name; };
+        size_t getUserId() const { return userId; }
+        size_t getKey() const { return key; }
+    };
+}
 
 #endif //FILESYSTEM_USER_H

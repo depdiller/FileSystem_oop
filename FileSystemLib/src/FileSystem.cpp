@@ -4,3 +4,6 @@
 
 #include "FileSystem.h"
 
+namespace System {
+
+}

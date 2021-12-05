@@ -6,16 +6,17 @@
 #define FILESYSTEM_ABSTRACTFILE_H
 
 #include "Permissions.h"
-#include "vector"
+#include <iostream>
+#include <array>
 
 namespace System {
     class AbstractFile {
     protected:
-        unsigned int owner;
-        unsigned char size;
-        std::vector<Permissions> permissions;
+        size_t ownerId;
+        size_t size;
+        std::array<int, 2> permissions;
     public:
-        AbstractFile(unsigned int, unsigned char, std::vector<Permissions>);
+        AbstractFile(size_t ownerId, std::array<int, 2> = {6, 6});
         virtual usigned getOwner(AbstractFile&) const = 0;
         virtual void setPermissions(AbstractFile&) const = 0 ;
         virtual usined char getSize(AbstractFile&) const = 0;

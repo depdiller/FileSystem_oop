@@ -6,16 +6,24 @@
 #define FILESYSTEM_PERMISSIONS_H
 
 namespace System {
+//    struct rwx {
+//    private:
+//        unsigned int read;
+//        unsigned int write;
+//        unsigned int execute;
+//    public:
+//        explicit rwx(unsigned int codePermission);
+//    };
+//
     class Permissions {
     private:
         unsigned int read;
         unsigned int write;
         unsigned int execute;
-        static unsigned int umask;
     public:
-        Permissions(unsigned int permissionList = umask, AbstractFile &);
-        bool changeUmask(unsigned int);
-        bool setPermissions(unsigned int);
+        explicit Permissions(unsigned int codePermission);
+        Permissions& setPermissions(unsigned int codePermission);
+        unsigned int getPermissions() const;
     };
 }
 
