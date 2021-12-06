@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/AbstractFile.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.obj"
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/File.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj"
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/FileSystem.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj"
+  "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Permissions.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj"
+  "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/User.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

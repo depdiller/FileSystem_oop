@@ -151,6 +151,15 @@
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/FileSystem.h">
 			<Option target="FileSystemLib"/>
 		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Permissions.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Permissions.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/User.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/User.h">
 			<Option target="FileSystemLib"/>
 		</Unit>

@@ -201,6 +201,54 @@ src/FileSystem.cpp.s:
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.s
 .PHONY : src/FileSystem.cpp.s
 
+src/Permissions.obj: src/Permissions.cpp.obj
+.PHONY : src/Permissions.obj
+
+# target to build an object file
+src/Permissions.cpp.obj:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj
+.PHONY : src/Permissions.cpp.obj
+
+src/Permissions.i: src/Permissions.cpp.i
+.PHONY : src/Permissions.i
+
+# target to preprocess a source file
+src/Permissions.cpp.i:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.i
+.PHONY : src/Permissions.cpp.i
+
+src/Permissions.s: src/Permissions.cpp.s
+.PHONY : src/Permissions.s
+
+# target to generate assembly for a file
+src/Permissions.cpp.s:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.s
+.PHONY : src/Permissions.cpp.s
+
+src/User.obj: src/User.cpp.obj
+.PHONY : src/User.obj
+
+# target to build an object file
+src/User.cpp.obj:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj
+.PHONY : src/User.cpp.obj
+
+src/User.i: src/User.cpp.i
+.PHONY : src/User.i
+
+# target to preprocess a source file
+src/User.cpp.i:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.i
+.PHONY : src/User.cpp.i
+
+src/User.s: src/User.cpp.s
+.PHONY : src/User.s
+
+# target to generate assembly for a file
+src/User.cpp.s:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.s
+.PHONY : src/User.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -219,6 +267,12 @@ help:
 	@echo ... src/FileSystem.obj
 	@echo ... src/FileSystem.i
 	@echo ... src/FileSystem.s
+	@echo ... src/Permissions.obj
+	@echo ... src/Permissions.i
+	@echo ... src/Permissions.s
+	@echo ... src/User.obj
+	@echo ... src/User.i
+	@echo ... src/User.s
 .PHONY : help
 
 

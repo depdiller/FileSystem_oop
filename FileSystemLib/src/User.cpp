@@ -3,6 +3,7 @@
 //
 #include "User.h"
 #include <iostream>
+#include <utility>
 
 namespace System {
     User::User(std::string name) : name(name){
@@ -17,11 +18,11 @@ namespace System {
     }
     User &User::setKey(size_t newKey) {
         key = newKey;
-        return this;
+        return *this;
     }
 
     User &User::setName(std::string newName) {
-        name = newName;
-        return this;
+        name = std::move(newName);
+        return *this;
     }
 }

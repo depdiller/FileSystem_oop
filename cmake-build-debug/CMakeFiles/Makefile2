@@ -123,12 +123,12 @@ CMakeFiles/FileSystem.dir/clean:
 FileSystemLib/CMakeFiles/FileSystemLib.dir/all:
 	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/depend
 	$(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6 "Built target FileSystemLib"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=3,4,5,6,7,8 "Built target FileSystemLib"
 .PHONY : FileSystemLib/CMakeFiles/FileSystemLib.dir/all
 
 # Build rule for subdir invocation for target.
 FileSystemLib/CMakeFiles/FileSystemLib.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 FileSystemLib/CMakeFiles/FileSystemLib.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 0
 .PHONY : FileSystemLib/CMakeFiles/FileSystemLib.dir/rule

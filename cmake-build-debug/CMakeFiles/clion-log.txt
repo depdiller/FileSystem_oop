@@ -1,13 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\stani\CLionProjects\FileSystem
 -- Configuring done
-CMake Error at FileSystemLib/CMakeLists.txt:2 (add_library):
-  Cannot find source file:
-
-    src/Permissions.cpp
-
-
-CMake Error at FileSystemLib/CMakeLists.txt:2 (add_library):
-  No SOURCES given to target: FileSystemLib
-
-
-CMake Generate step failed.  Build files cannot be regenerated correctly.
+-- Generating done
+-- Build files have been written to: C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug

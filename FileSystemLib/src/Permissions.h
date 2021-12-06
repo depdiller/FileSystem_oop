@@ -4,26 +4,27 @@
 
 #ifndef FILESYSTEM_PERMISSIONS_H
 #define FILESYSTEM_PERMISSIONS_H
+#include <array>
 
 namespace System {
-//    struct rwx {
-//    private:
-//        unsigned int read;
-//        unsigned int write;
-//        unsigned int execute;
-//    public:
-//        explicit rwx(unsigned int codePermission);
-//    };
-//
+    struct rwx {
+    private:
+        bool read;
+        bool write;
+        bool execute;
+    public:
+        explicit rwx(unsigned int codePermission = 66);
+
+        // move constructor
+    };
+
     class Permissions {
     private:
-        unsigned int read;
-        unsigned int write;
-        unsigned int execute;
+        std::array<rwx, 2> uoPermissions;
     public:
-        explicit Permissions(unsigned int codePermission);
+        explicit Permissions(unsigned int codePermissions);
         Permissions& setPermissions(unsigned int codePermission);
-        unsigned int getPermissions() const;
+        std::array<rwx, 2> getPermissions() const { return uoPermissions; }
     };
 }
 
