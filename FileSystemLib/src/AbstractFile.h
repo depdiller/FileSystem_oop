@@ -14,14 +14,14 @@ namespace System {
     protected:
         size_t ownerId;
         size_t size;
-        std::array<int, 2> permissions;
+        Permissions ouPermissions;
     public:
-        AbstractFile(size_t ownerId, std::array<int, 2> = {6, 6});
-        virtual usigned getOwner(AbstractFile&) const = 0;
-        virtual void setPermissions(AbstractFile&) const = 0 ;
-        virtual usined char getSize(AbstractFile&) const = 0;
-        virtual void getPermissions(AbstractFile&) const = 0;
-        virtual void informations(AbstractFile&) const = 0;
+        AbstractFile(size_t ownerId, unsigned int uoPermissions = 66);
+        size_t getOwner() const { return ownerId; }
+        void setPermissions(unsigned int codePermissions);
+        size_t getSize() { return size; }
+        Permissions getPermissions() const { return uoPermissions; }
+        virtual void information () const = 0;
     };
 }
 

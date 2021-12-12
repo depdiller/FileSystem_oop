@@ -13,8 +13,10 @@ namespace System {
         bool write;
         bool execute;
     public:
-        explicit rwx(unsigned int codePermission = 66);
-
+        explicit rwx(unsigned int codePermission = 6);
+        bool isReadable() const { return read; }
+        bool isWritable() const { return write; }
+        bool isExecutable() const { return execute; }
         // move constructor
     };
 
@@ -22,7 +24,7 @@ namespace System {
     private:
         std::array<rwx, 2> uoPermissions;
     public:
-        explicit Permissions(unsigned int codePermissions);
+        explicit Permissions(unsigned int codePermissions = 66);
         Permissions& setPermissions(unsigned int codePermission);
         std::array<rwx, 2> getPermissions() const { return uoPermissions; }
     };

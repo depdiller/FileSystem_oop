@@ -4,34 +4,44 @@
 
 #ifndef FILESYSTEM_FILESYSTEM_H
 #define FILESYSTEM_FILESYSTEM_H
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <set>
+#include "User.h"
+#include "Dir.h"
+#include "string"
+#include "AbstractFile.h"
 
 namespace System {
     class FileSystem {
     private:
-        Dir &homeDir;
-        Dir &rootDir;
-        std::vector <User> TableOfUsers;
-        User &currUser;
-        static unsigned char umask[2];
+        FILE *disk;
+        Dir rootDir;
+        std::set<User> tableOfUsers;
+        User currUser;
     public:
-        FileSystem(User &) : umask({'6', '6'}),;
+        // constructors
+        FileSystem(FILE *associatedFile,  const std::string& username = "root");
+        // getters
 
+        // custom setters
+        void login(const std::string& userName);
+        void setCurrUser(const User&);
+        // additional functions
         void listUsers();
-
-        void woami();
-
-        bool editTableOfUsrs(currUser &);
-
+        void whoami();
+        void deleteFromTable(const std::string& username);
+        void addToTable(const std::string& username);
         bool eccryptDecrypt(AbstractFile &);
-
         void statistic();
-
-        void logout();
-
-        void login(std::string userName);
-
-        bool changeUmask(unsigned int);
+        int exit();
     };
 }
 
+/*TODO:
+ * 1. В конструкторе должна быть ссылка на поток,
+ * связанная с ассоциированным с файловой системой файлом.
+ * Потом через fseek должно отсчитываться смещение по
+ * файлу. */
 #endif //FILESYSTEM_FILESYSTEM_H

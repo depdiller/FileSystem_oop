@@ -4,7 +4,7 @@
 
 #ifndef FILESYSTEM_USER_H
 #define FILESYSTEM_USER_H
-
+#include "Dir.h"
 #include <iostream>
 
 namespace System {
@@ -13,17 +13,28 @@ namespace System {
         size_t userId;
         std::string name;
         size_t key;
+        Dir &homeDir;
     public:
-        User(std::string name);
-        User(std::string name, size_t key);
-        // getters
+        // constructors
+        User(const std::string& name);
+        User(const std::string& name, size_t key);
+        // setters
         User& setKey(size_t newKey);
         User& setName(std::string newName);
-        // setters
-        std::string getName() const { return name; };
+        // getters
+        std::string getName() const { return name; }
         size_t getUserId() const { return userId; }
         size_t getKey() const { return key; }
+        // operators
+        bool operator==(const std::string &username) const;
+        bool operator!=(const std::string &username) const;
+        bool operator<(const User&) const;
+        bool operator<(const std::string &username) const;
+        User &operator=(const User&);
     };
 }
+
+/*TODO
+ * 1. копирующий оператор проверить в файловой системе в login */
 
 #endif //FILESYSTEM_USER_H

@@ -9,9 +9,9 @@ namespace System {
     rwx::rwx(unsigned int codePermission) {
         if (codePermission > 7 || codePermission < 0)
             throw std::invalid_argument("wrong_permission_code");
-        read = (codePermission & 0b100) == 4 ? true : false;
-        write = (codePermission & 0b010) == 2 ? true : false;
-        execute = (codePermission & 0b001) == 1 ? true : false;
+        read = (codePermission & 0b100) == 4;
+        write = (codePermission & 0b010) == 2;
+        execute = (codePermission & 0b001) == 1;
     }
 
     // permissions constructors

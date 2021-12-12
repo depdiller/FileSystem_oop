@@ -94,7 +94,7 @@ FileSystemLib/clean: FileSystemLib/CMakeFiles/FileSystemLib.dir/clean
 # Target rules for target CMakeFiles/FileSystem.dir
 
 # All Build rule for target.
-CMakeFiles/FileSystem.dir/all:
+CMakeFiles/FileSystem.dir/all: FileSystemLib/CMakeFiles/FileSystemLib.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FileSystem.dir\build.make CMakeFiles/FileSystem.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\FileSystem.dir\build.make CMakeFiles/FileSystem.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=1,2 "Built target FileSystem"
@@ -102,7 +102,7 @@ CMakeFiles/FileSystem.dir/all:
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FileSystem.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 8
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/FileSystem.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/FileSystem.dir/rule

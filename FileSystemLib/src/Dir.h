@@ -8,8 +8,9 @@
 class Dir : AbstractFile {
 private:
     int * virtualAdr;
-private:
+public:
     Dir();
+    Dir(unsigned  int userId);
     void ls(Dir);
     bool mv(Dir dir1, Dir dir2);
     bool rm()

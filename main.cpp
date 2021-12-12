@@ -1,6 +1,12 @@
 #include <iostream>
+#include "FileSystemLib/src/FileSystem.h"
+#include <cstdio>
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+    FILE *associatedFile;
+    associatedFile = fopen("C:\\disk.txt", "a+");
+    if (associatedFile != nullptr) {
+        System::FileSystem system = System::FileSystem(associatedFile);
+
+    }
 }

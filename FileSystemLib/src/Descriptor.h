@@ -4,11 +4,12 @@
 
 #ifndef FILESYSTEM_DESCRIPTOR_H
 #define FILESYSTEM_DESCRIPTOR_H
+#include <iostream>
 
 class Descriptor {
 private:
-    string streamName;
-    int * virtAdr;
+    std::string streamName;
+    unsigned int virtualAddress;
 public:
     Descriptor(AbstractFile&);
 };

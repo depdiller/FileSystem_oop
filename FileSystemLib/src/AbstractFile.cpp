@@ -6,14 +6,13 @@
 #include <iostream>
 
 namespace System {
-   AbstractFile::AbstractFile(unsigned int owner, unsigned char permissions[2]) {
-       for (int i = 0; i < 2; ++i) {
-           if (permissions[i] < 48 || permissions[i] > 55) {
-               throw std::invalid_argument("invalid argument in constructor");
-           }
-       }
-       this->permissions = new Permissions();
-   }
+    AbstractFile::AbstractFile(size_t ownerId, unsigned int uoPermissions) : ownerId(ownerId), ouPermissions(uoPermissions) {
+        size = sizeof(ownerId) + sizeof(permissions);
+    }
 
-
+    void AbstractFile::setPermissions(unsigned int codePermissions) {
+        if (codePermissions > 77 || codePermissions < 0)
+            throw std::invalid_argument("wrong_permission_code");
+        ouPermissions = Permissions(codePermissions);
+    }
 }

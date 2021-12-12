@@ -87,6 +87,7 @@ FileSystem_EXTERNAL_OBJECTS =
 
 FileSystem.exe: CMakeFiles/FileSystem.dir/main.cpp.obj
 FileSystem.exe: CMakeFiles/FileSystem.dir/build.make
+FileSystem.exe: FileSystemLib/libFileSystemLib.a
 FileSystem.exe: CMakeFiles/FileSystem.dir/linklibs.rsp
 FileSystem.exe: CMakeFiles/FileSystem.dir/objects1.rsp
 FileSystem.exe: CMakeFiles/FileSystem.dir/link.txt
