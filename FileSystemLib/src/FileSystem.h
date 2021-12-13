@@ -14,6 +14,8 @@
 #include "AbstractFile.h"
 
 namespace System {
+    extern FILE *diskPtr;
+
     class FileSystem {
     private:
         FILE *disk;
@@ -22,9 +24,9 @@ namespace System {
         User currUser;
     public:
         // constructors
-        FileSystem(FILE *associatedFile,  const std::string& username = "root");
+        FileSystem(FILE *associatedFile, const std::string& username = "root");
         // getters
-
+        FILE *getDisk() const { return disk; }
         // custom setters
         void login(const std::string& userName);
         void setCurrUser(const User&);
@@ -43,5 +45,6 @@ namespace System {
  * 1. В конструкторе должна быть ссылка на поток,
  * связанная с ассоциированным с файловой системой файлом.
  * Потом через fseek должно отсчитываться смещение по
- * файлу. */
+ * файлу.
+ * 2. Проверить нужно ли оставлять extern или можно убрать*/
 #endif //FILESYSTEM_FILESYSTEM_H

@@ -9,6 +9,7 @@ namespace System {
         disk = associatedFile;
         tableOfUsers.insert(User(std::string("root")));
         currUser = *tableOfUsers.begin();
+        diskPtr = associatedFile;
     }
 
     // return to root-user or just exit the program

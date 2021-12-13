@@ -18,6 +18,7 @@ namespace System {
         // the size of the storage space currently allocated for the string
         this->key = name.capacity();
     }
+
     User::User(const std::string& name, size_t key) : name(name), key(key) {
         if (name == "root")
             userId = 1;

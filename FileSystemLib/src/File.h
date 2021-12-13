@@ -6,22 +6,33 @@
 #define FILESYSTEM_FILE_H
 
 #include "AbstractFile.h"
-#include <vector>
+#include "Descriptor.h"
+#include <set>
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <ctime>
 
 namespace System {
     class File : public AbstractFile {
     protected:
         std::string dateAndTime;
-        std::vector<Descriptor> TableOfStreams;
+        std::set<Descriptor> TableOfStreams;
     public:
-        File(unsigned int );
-        void getDateAndTime;
+        // constructors
+        File(size_t ownerId, unsigned int uoPermissions = 66);
+        // setters
+        File &setDateAndTime(std::string updateTime);
+        // getters
+        std::string getDateAndTime() { return this->dateAndTime; }
+        std::set<Descriptor> getStreams() { return this->TableOfStreams; }
+        // additional
 
-        void OpenFile();
-
-        void getStreams;
-        void virtualInformation;
+        void information () const override;
     };
+
+    // additional outside functions
+    std::string currentDateTime();
 }
 
 #endif //FILESYSTEM_FILE_H

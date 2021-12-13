@@ -79,10 +79,52 @@ FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.s"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\AbstractFile.cpp -o CMakeFiles\FileSystemLib.dir\src\AbstractFile.cpp.s
 
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj: ../FileSystemLib/src/Descriptor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\Descriptor.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Descriptor.cpp
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.i"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Descriptor.cpp > CMakeFiles\FileSystemLib.dir\src\Descriptor.cpp.i
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.s"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Descriptor.cpp -o CMakeFiles\FileSystemLib.dir\src\Descriptor.cpp.s
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj: ../FileSystemLib/src/Dir.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\Dir.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Dir.cpp
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileSystemLib.dir/src/Dir.cpp.i"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Dir.cpp > CMakeFiles\FileSystemLib.dir\src\Dir.cpp.i
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileSystemLib.dir/src/Dir.cpp.s"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Dir.cpp -o CMakeFiles\FileSystemLib.dir\src\Dir.cpp.s
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj: ../FileSystemLib/src/EncryptFile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\EncryptFile.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\EncryptFile.cpp
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.i"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\EncryptFile.cpp > CMakeFiles\FileSystemLib.dir\src\EncryptFile.cpp.i
+
+FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.s"
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\EncryptFile.cpp -o CMakeFiles\FileSystemLib.dir\src\EncryptFile.cpp.s
+
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj: ../FileSystemLib/src/File.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\File.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\File.cpp
 
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.i: cmake_force
@@ -96,7 +138,7 @@ FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.s: cmake_force
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj: ../FileSystemLib/src/FileSystem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\FileSystem.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\FileSystem.cpp
 
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.i: cmake_force
@@ -110,7 +152,7 @@ FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.s: cmake_force
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj: ../FileSystemLib/src/User.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\User.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\User.cpp
 
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.i: cmake_force
@@ -124,7 +166,7 @@ FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.s: cmake_force
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/flags.make
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj: FileSystemLib/CMakeFiles/FileSystemLib.dir/includes_CXX.rsp
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj: ../FileSystemLib/src/Permissions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\FileSystemLib.dir\src\Permissions.cpp.obj -c C:\Users\stani\CLionProjects\FileSystem\FileSystemLib\src\Permissions.cpp
 
 FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.i: cmake_force
@@ -138,6 +180,9 @@ FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.s: cmake_force
 # Object files for target FileSystemLib
 FileSystemLib_OBJECTS = \
 "CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.obj" \
+"CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj" \
+"CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj" \
+"CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj" \
 "CMakeFiles/FileSystemLib.dir/src/File.cpp.obj" \
 "CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj" \
 "CMakeFiles/FileSystemLib.dir/src/User.cpp.obj" \
@@ -147,13 +192,16 @@ FileSystemLib_OBJECTS = \
 FileSystemLib_EXTERNAL_OBJECTS =
 
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.obj
+FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj
+FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj
+FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.obj
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/build.make
 FileSystemLib/libFileSystemLib.a: FileSystemLib/CMakeFiles/FileSystemLib.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX static library libFileSystemLib.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libFileSystemLib.a"
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && $(CMAKE_COMMAND) -P CMakeFiles\FileSystemLib.dir\cmake_clean_target.cmake
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug\FileSystemLib && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\FileSystemLib.dir\link.txt --verbose=$(VERBOSE)
 

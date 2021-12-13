@@ -7,20 +7,24 @@
 
 #include "Permissions.h"
 #include <iostream>
-#include <array>
 
 namespace System {
     class AbstractFile {
     protected:
         size_t ownerId;
         size_t size;
-        Permissions ouPermissions;
+        Permissions uoPermissions;
     public:
-        AbstractFile(size_t ownerId, unsigned int uoPermissions = 66);
+        // constructors
+        explicit AbstractFile(size_t ownerId, unsigned int uoPermissions = 66);
+        // setters
+        AbstractFile& setPermissions(unsigned int codePermissions);
+        AbstractFile& setSize(size_t newSize);
+        // getters
         size_t getOwner() const { return ownerId; }
-        void setPermissions(unsigned int codePermissions);
         size_t getSize() { return size; }
         Permissions getPermissions() const { return uoPermissions; }
+        // additional
         virtual void information () const = 0;
     };
 }

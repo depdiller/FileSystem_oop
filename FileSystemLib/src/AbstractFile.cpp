@@ -6,13 +6,20 @@
 #include <iostream>
 
 namespace System {
-    AbstractFile::AbstractFile(size_t ownerId, unsigned int uoPermissions) : ownerId(ownerId), ouPermissions(uoPermissions) {
-        size = sizeof(ownerId) + sizeof(permissions);
+    AbstractFile::AbstractFile(size_t ownerId, unsigned int uoPermissions) : uoPermissions(uoPermissions){
+        this->ownerId = ownerId;
+        size = 0;
     }
 
-    void AbstractFile::setPermissions(unsigned int codePermissions) {
+    AbstractFile &AbstractFile::setPermissions(unsigned int codePermissions) {
         if (codePermissions > 77 || codePermissions < 0)
             throw std::invalid_argument("wrong_permission_code");
-        ouPermissions = Permissions(codePermissions);
+        uoPermissions = Permissions(codePermissions);
+        return *this;
+    }
+
+    AbstractFile &AbstractFile::setSize(size_t newSize) {
+        this->size = newSize;
+        return *this;
     }
 }

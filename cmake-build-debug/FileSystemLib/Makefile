@@ -153,6 +153,78 @@ src/AbstractFile.cpp.s:
 	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.s
 .PHONY : src/AbstractFile.cpp.s
 
+src/Descriptor.obj: src/Descriptor.cpp.obj
+.PHONY : src/Descriptor.obj
+
+# target to build an object file
+src/Descriptor.cpp.obj:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj
+.PHONY : src/Descriptor.cpp.obj
+
+src/Descriptor.i: src/Descriptor.cpp.i
+.PHONY : src/Descriptor.i
+
+# target to preprocess a source file
+src/Descriptor.cpp.i:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.i
+.PHONY : src/Descriptor.cpp.i
+
+src/Descriptor.s: src/Descriptor.cpp.s
+.PHONY : src/Descriptor.s
+
+# target to generate assembly for a file
+src/Descriptor.cpp.s:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.s
+.PHONY : src/Descriptor.cpp.s
+
+src/Dir.obj: src/Dir.cpp.obj
+.PHONY : src/Dir.obj
+
+# target to build an object file
+src/Dir.cpp.obj:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj
+.PHONY : src/Dir.cpp.obj
+
+src/Dir.i: src/Dir.cpp.i
+.PHONY : src/Dir.i
+
+# target to preprocess a source file
+src/Dir.cpp.i:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.i
+.PHONY : src/Dir.cpp.i
+
+src/Dir.s: src/Dir.cpp.s
+.PHONY : src/Dir.s
+
+# target to generate assembly for a file
+src/Dir.cpp.s:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.s
+.PHONY : src/Dir.cpp.s
+
+src/EncryptFile.obj: src/EncryptFile.cpp.obj
+.PHONY : src/EncryptFile.obj
+
+# target to build an object file
+src/EncryptFile.cpp.obj:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj
+.PHONY : src/EncryptFile.cpp.obj
+
+src/EncryptFile.i: src/EncryptFile.cpp.i
+.PHONY : src/EncryptFile.i
+
+# target to preprocess a source file
+src/EncryptFile.cpp.i:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.i
+.PHONY : src/EncryptFile.cpp.i
+
+src/EncryptFile.s: src/EncryptFile.cpp.s
+.PHONY : src/EncryptFile.s
+
+# target to generate assembly for a file
+src/EncryptFile.cpp.s:
+	cd /d C:\Users\stani\CLionProjects\FileSystem\cmake-build-debug && $(MAKE) $(MAKESILENT) -f FileSystemLib\CMakeFiles\FileSystemLib.dir\build.make FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.s
+.PHONY : src/EncryptFile.cpp.s
+
 src/File.obj: src/File.cpp.obj
 .PHONY : src/File.obj
 
@@ -261,6 +333,15 @@ help:
 	@echo ... src/AbstractFile.obj
 	@echo ... src/AbstractFile.i
 	@echo ... src/AbstractFile.s
+	@echo ... src/Descriptor.obj
+	@echo ... src/Descriptor.i
+	@echo ... src/Descriptor.s
+	@echo ... src/Dir.obj
+	@echo ... src/Dir.i
+	@echo ... src/Dir.s
+	@echo ... src/EncryptFile.obj
+	@echo ... src/EncryptFile.i
+	@echo ... src/EncryptFile.s
 	@echo ... src/File.obj
 	@echo ... src/File.i
 	@echo ... src/File.s

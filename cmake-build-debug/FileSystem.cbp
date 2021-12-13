@@ -130,10 +130,19 @@
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/AbstractFile.h">
 			<Option target="FileSystemLib"/>
 		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Descriptor.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Descriptor.h">
 			<Option target="FileSystemLib"/>
 		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Dir.cpp">
+			<Option target="FileSystemLib"/>
+		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Dir.h">
+			<Option target="FileSystemLib"/>
+		</Unit>
+		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/EncryptFile.cpp">
 			<Option target="FileSystemLib"/>
 		</Unit>
 		<Unit filename="C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/EncryptFile.h">

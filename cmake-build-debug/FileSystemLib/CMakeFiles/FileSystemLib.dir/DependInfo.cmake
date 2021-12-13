@@ -9,6 +9,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/AbstractFile.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.obj"
+  "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Descriptor.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.obj"
+  "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Dir.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.obj"
+  "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/EncryptFile.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.obj"
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/File.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.obj"
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/FileSystem.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.obj"
   "C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/src/Permissions.cpp" "C:/Users/stani/CLionProjects/FileSystem/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.obj"
