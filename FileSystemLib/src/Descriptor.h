@@ -19,6 +19,7 @@ namespace System {
         /* indexInTable чтобы адрес каждого n-ого потока смешался
          * на n * 1024*/
         Descriptor(std::string streamName, int indexInTable);
+        Descriptor (const std::string& streamName);
         // getters
         std::string getStreamName() const { return streamName; };
         unsigned int getVirtualAddress() const { return virtualAddress; }
@@ -31,5 +32,6 @@ namespace System {
         bool operator!=(const std::string&) const;
     };
 }
+
 
 #endif //FILESYSTEM_DESCRIPTOR_H

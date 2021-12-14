@@ -27,13 +27,24 @@ namespace System {
         std::string getDateAndTime() { return this->dateAndTime; }
         std::set<Descriptor> getStreams() { return this->TableOfStreams; }
         // additional
-        // parameter = "r"/"w"/"rw"
-        void open(const std::string& parameter, const std::string& streamName = "MAIN");
-        void close();
+            // parameter = "r"/"w"/"rw"
+        FILE *open(const std::string& parameter, const std::string& streamName = "MAIN");
+        FILE *close();
+        void writeToFile(FILE *ptrFromOpen, const std::string& data);
+            // stringLength ~= size of bytes
+        std::string readFile(FILE *ptrFromOpen, size_t stringLength);
+        void cat(FILE *ptrFromOpen);
+            // write additional line to file
+        void editFile(FILE *ptrFromOpen, const std::string &toAdd);
         void information () const override;
     };
+
     // additional outside functions
     std::string currentDateTime();
 }
 
 #endif //FILESYSTEM_FILE_H
+
+/*TODO
+ * 1. Переписать open, чтобы не использовал преобразование
+ * unsigned int -> size_t*/

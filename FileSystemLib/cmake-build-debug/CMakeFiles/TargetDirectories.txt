@@ -1,3 +1,0 @@
-C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/cmake-build-debug/CMakeFiles/FileSystemLib.dir
-C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/stani/CLionProjects/FileSystem/FileSystemLib/cmake-build-debug/CMakeFiles/rebuild_cache.dir

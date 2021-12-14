@@ -3,12 +3,12 @@
 //
 
 #include "File.h"
-#include "FileSystem.h"
+#include "FileSystem .h"
 
 #include <utility>
 
 namespace System {
-    File::File(size_t ownerId, unsigned int uoPermissions) : AbstractFile(ownerId, uoPermissions){
+    File::File(size_t ownerId, unsigned int uoPermissions) : AbstractFile(ownerId, uoPermissions) {
         TableOfStreams.insert(Descriptor("MAIN", 1));
     }
 
@@ -28,18 +28,58 @@ namespace System {
 
     void File::information() const {
         std::cout << this->ownerId << std::endl <<
-        this->dateAndTime << std::endl <<
-        this->size << std::endl << std::endl;
+                  this->dateAndTime << std::endl <<
+                  this->size << std::endl << std::endl;
     }
 
-    void File::open(const std::string& parameter, const std::string& streamName) {
+    FILE *File::open(const std::string &parameter, const std::string &streamName) {
+        FILE *tmp = currSystem->getDisk();
         if (this->checkPermission(parameter)) {
             std::set<Descriptor>::iterator it;
             it = TableOfStreams.find(streamName);
-        }
-        else
+            if (it != TableOfStreams.end()) {
+                std::fseek(tmp, standardOffset + (unsigned int)size, SEEK_CUR);
+                return tmp;
+            } else
+                return nullptr;
+        } else
             throw std::invalid_argument("no access to such operation");
     }
 
-}
+    FILE *File::close() {
+        return currSystem->getDisk();
+    }
 
+    void File::writeToFile(FILE *ptrFromOpen, const std::string &data) {
+        if (ptrFromOpen != nullptr)
+            std::fwrite(data.c_str(), sizeof(char), data.size(), ptrFromOpen);
+        else
+            throw std::invalid_argument("stream is not attached to any file");
+    }
+
+    std::string File::readFile(FILE *ptrFromOpen, size_t stringLength) {
+        if (ptrFromOpen != nullptr) {
+            std::string myString(stringLength, '\0');
+            std::fread(&myString[0], sizeof(char), stringLength, ptrFromOpen);
+            return myString;
+        } else
+            throw std::invalid_argument("stream is not attached to file");
+    }
+
+    void File::cat(FILE *ptrFromOpen) {
+        if (ptrFromOpen != nullptr) {
+            std::string myString(this->size, '\0');
+            fread(&myString[0], sizeof(char), this->size, ptrFromOpen);
+            std::cout << myString;
+        }
+        else
+            throw std::invalid_argument("stream is not attached to file");
+    }
+
+    void File::editFile(FILE *ptrFromOpen, const std::string &toAdd) {
+        if (ptrFromOpen != nullptr)
+            std::fwrite(toAdd.c_str(), sizeof(char), toAdd.size(), ptrFromOpen);
+        else
+            throw std::invalid_argument("stream is not attached to file");
+    }
+}

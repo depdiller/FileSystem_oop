@@ -1,8 +1,7 @@
 //
 // Created by stani on 30.11.2021.
 //
-
-#include "FileSystem.h"
+#include "FileSystem .h"
 
 namespace System {
     FileSystem::FileSystem(FILE *associatedFile, const std::string& username) : currUser(username), rootDir(){

@@ -4,16 +4,15 @@
 
 #ifndef FILESYSTEM_DIR_H
 #define FILESYSTEM_DIR_H
+#include "AbstractFile.h"
 
-class Dir : AbstractFile {
-private:
-    int * virtualAdr;
-public:
-    Dir();
-    Dir(unsigned  int userId);
-    void ls(Dir);
-    bool mv(Dir dir1, Dir dir2);
-    bool rm()
-};
+namespace System {
+    class Dir : AbstractFile {
+    private:
+        int *virtualAdr;
+    public:
+        Dir();
+    };
+}
 
 #endif //FILESYSTEM_DIR_H

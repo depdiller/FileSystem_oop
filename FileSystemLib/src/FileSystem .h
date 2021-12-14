@@ -40,7 +40,7 @@ namespace System {
         int exit();
     };
 
-    extern FileSystem &system;
+    extern FileSystem *currSystem;
 }
 
 /*TODO:
