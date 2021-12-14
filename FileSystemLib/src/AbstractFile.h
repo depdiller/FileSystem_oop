@@ -1,13 +1,11 @@
 //
 // Created by stani on 24.11.2021.
 //
-
 #ifndef FILESYSTEM_ABSTRACTFILE_H
 #define FILESYSTEM_ABSTRACTFILE_H
 
 #include "Permissions.h"
 #include <iostream>
-#include "FileSystem.h"
 
 namespace System {
     class AbstractFile {

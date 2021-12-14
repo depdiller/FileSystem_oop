@@ -4,4 +4,4 @@ file(GLOB SOURCE_LIB
         "src/*.cpp"
         )
 
-add_library(FileSystemLib ${SOURCE_LIB})
+add_library(FileSystemLib ${SOURCE_LIB} src/DirStruct.h)
