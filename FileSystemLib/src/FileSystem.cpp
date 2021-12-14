@@ -9,7 +9,6 @@ namespace System {
         disk = associatedFile;
         tableOfUsers.insert(User(std::string("root")));
         currUser = *tableOfUsers.begin();
-        diskPtr = associatedFile;
     }
 
     // return to root-user or just exit the program
@@ -71,5 +70,9 @@ namespace System {
 
     void FileSystem::setCurrUser(const User &newUser) {
         currUser = newUser;
+    }
+
+    bool FileSystem::eccryptDecrypt(AbstractFile &) {
+        return false;
     }
 }

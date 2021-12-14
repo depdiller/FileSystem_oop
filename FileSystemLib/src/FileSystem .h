@@ -1,9 +1,10 @@
 //
-// Created by stani on 24.11.2021.
+// Created by stani on 13.12.2021.
 //
 
 #ifndef FILESYSTEM_FILESYSTEM_H
 #define FILESYSTEM_FILESYSTEM_H
+
 #include <iostream>
 #include <cstdio>
 #include <vector>
@@ -14,8 +15,6 @@
 #include "AbstractFile.h"
 
 namespace System {
-    extern FILE *diskPtr;
-
     class FileSystem {
     private:
         FILE *disk;
@@ -27,6 +26,7 @@ namespace System {
         FileSystem(FILE *associatedFile, const std::string& username = "root");
         // getters
         FILE *getDisk() const { return disk; }
+        User &getCurrUser() const { return currUser; }
         // custom setters
         void login(const std::string& userName);
         void setCurrUser(const User&);
@@ -35,10 +35,12 @@ namespace System {
         void whoami();
         void deleteFromTable(const std::string& username);
         void addToTable(const std::string& username);
-        bool eccryptDecrypt(AbstractFile &);
+        bool eccryptDecrypt(AbstractFile&);
         void statistic();
         int exit();
     };
+
+    extern FileSystem &system;
 }
 
 /*TODO:
@@ -47,4 +49,7 @@ namespace System {
  * Потом через fseek должно отсчитываться смещение по
  * файлу.
  * 2. Проверить нужно ли оставлять extern или можно убрать*/
+#endif //FILESYSTEM_FILESYSTEM_H
+}
+
 #endif //FILESYSTEM_FILESYSTEM_H

@@ -27,10 +27,11 @@ namespace System {
         std::string getDateAndTime() { return this->dateAndTime; }
         std::set<Descriptor> getStreams() { return this->TableOfStreams; }
         // additional
-
+        // parameter = "r"/"w"/"rw"
+        void open(const std::string& parameter, const std::string& streamName = "MAIN");
+        void close();
         void information () const override;
     };
-
     // additional outside functions
     std::string currentDateTime();
 }

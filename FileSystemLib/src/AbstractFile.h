@@ -7,6 +7,7 @@
 
 #include "Permissions.h"
 #include <iostream>
+#include "FileSystem.h"
 
 namespace System {
     class AbstractFile {
@@ -26,6 +27,9 @@ namespace System {
         Permissions getPermissions() const { return uoPermissions; }
         // additional
         virtual void information () const = 0;
+        void edit();
+        // "r" "w" "x"
+        bool checkPermission(const std::string& parameter) const;
     };
 }
 

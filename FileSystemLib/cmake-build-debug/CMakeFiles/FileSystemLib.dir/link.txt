@@ -1,0 +1,2 @@
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe qc libFileSystemLib.a CMakeFiles/FileSystemLib.dir/src/AbstractFile.obj CMakeFiles/FileSystemLib.dir/src/Descriptor.obj CMakeFiles/FileSystemLib.dir/src/Dir.obj CMakeFiles/FileSystemLib.dir/src/EncryptFile.obj CMakeFiles/FileSystemLib.dir/src/File.obj CMakeFiles/FileSystemLib.dir/src/FileSystem.obj CMakeFiles/FileSystemLib.dir/src/User.obj CMakeFiles/FileSystemLib.dir/src/Permissions.obj
+C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ranlib.exe libFileSystemLib.a

@@ -26,6 +26,7 @@ namespace System {
         Descriptor &setStreamName(std::string newName);
         // operators
         bool operator<(const Descriptor&) const;
+        bool operator<(const std::string&) const;
         bool operator==(const std::string&) const;
         bool operator!=(const std::string&) const;
     };

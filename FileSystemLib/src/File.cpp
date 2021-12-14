@@ -3,6 +3,7 @@
 //
 
 #include "File.h"
+#include "FileSystem.h"
 
 #include <utility>
 
@@ -26,7 +27,19 @@ namespace System {
     }
 
     void File::information() const {
-
+        std::cout << this->ownerId << std::endl <<
+        this->dateAndTime << std::endl <<
+        this->size << std::endl << std::endl;
     }
+
+    void File::open(const std::string& parameter, const std::string& streamName) {
+        if (this->checkPermission(parameter)) {
+            std::set<Descriptor>::iterator it;
+            it = TableOfStreams.find(streamName);
+        }
+        else
+            throw std::invalid_argument("no access to such operation");
+    }
+
 }
 
