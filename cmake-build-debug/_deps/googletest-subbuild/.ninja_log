@@ -1,0 +1,21 @@
+# ninja log v5
+0	25	1639553833298741319	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e5f70ee70ab0f5e7
+1111	1118	1639553834392479197	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	75bcbf761dda61d5
+25	1104	1639553834378659823	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	b278e0b886599143
+25	1104	1639553834378659823	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-download	b278e0b886599143
+1146	1156	1639553834429987272	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	77d3d9ddf11e12c2
+1104	1111	1639553834385695819	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	db7f722b8fdbfc57
+1104	1111	1639553834385695819	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-update	db7f722b8fdbfc57
+1146	1156	1639553834429987272	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/CMakeFiles/googletest-populate-complete	77d3d9ddf11e12c2
+1126	1132	1639553834406525731	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	b560fe314ea6728b
+1118	1126	1639553834399776851	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	2b5bd1d24b38c984
+1111	1118	1639553834392479197	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-patch	75bcbf761dda61d5
+1126	1132	1639553834406525731	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-build	b560fe314ea6728b
+1132	1139	1639553834413519061	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	cb11716d9628d520
+1139	1146	1639553834420335564	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	b7d9a0297848a56
+1139	1146	1639553834420335564	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-test	b7d9a0297848a56
+1118	1126	1639553834399776851	googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-configure	2b5bd1d24b38c984
+0	25	1639553833298741319	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-mkdir	e5f70ee70ab0f5e7
+1132	1139	1639553834413519061	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-install	cb11716d9628d520
+1146	1156	1639553834429987272	CMakeFiles/googletest-populate-complete	77d3d9ddf11e12c2
+1146	1156	1639553834429987272	/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/googletest-populate-stamp/googletest-populate-done	77d3d9ddf11e12c2

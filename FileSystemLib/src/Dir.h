@@ -15,18 +15,20 @@ namespace System {
      * под директории и файлы*/
     const size_t bytesForDir = 16;
 
-    class Dir : AbstractFile {
+    class Dir : public AbstractFile {
     private:
         unsigned int virtualAddress;
-        // описатель структуры каталога, в нее входят и подкаталоги
-        std::map<std::pair<std::string, Dir>, AbstractFile> tableOfFiles;
+        /* описатель структуры каталога, в нее входят и подкаталоги
+         * еще указатель на родительскую папку, потом указатель на
+         * описатель этого файла */
+        std::map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
     public:
         // constructors
         Dir(size_t ownerId, unsigned int uoPermissions = 66);
         // additional methods
         void showContentDir();
             // fileOrDir = 'f' / 'd'
-        void create(char fileOrDir, std::string name);
+        void create(char fileOrDir, const std::string& name);
         void copy();
         void move();
         void deleteFile();

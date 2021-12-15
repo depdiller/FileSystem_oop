@@ -23,10 +23,14 @@ namespace System {
         User currUser;
     public:
         // constructors
+        FileSystem() = delete;
+        /// @param associatedFile
+        /// @param username
         FileSystem(FILE *associatedFile, const std::string& username = "root");
         // getters
         FILE *getDisk() const { return disk; }
-        User &getCurrUser() const { return currUser; }
+        const User &getCurrUser() const { return currUser; }
+        const Dir &getRootDir() const { return rootDir; }
         // custom setters
         void login(const std::string& userName);
         void setCurrUser(const User&);
@@ -37,6 +41,7 @@ namespace System {
         void addToTable(const std::string& username);
         bool eccryptDecrypt(AbstractFile&);
         void statistic();
+        bool isInTable(const std::string &username);
         int exit();
     };
 
@@ -49,7 +54,4 @@ namespace System {
  * Потом через fseek должно отсчитываться смещение по
  * файлу.
  * 2. Проверить нужно ли оставлять extern или можно убрать*/
-#endif //FILESYSTEM_FILESYSTEM_H
-}
-
 #endif //FILESYSTEM_FILESYSTEM_H

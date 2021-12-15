@@ -10,13 +10,16 @@ namespace System {
         virtualAddress = bytesForDir;
     }
 
-    void Dir::create(char fileOrDir, std::string name) {
+    void Dir::create(char fileOrDir, const std::string& name) {
         if (fileOrDir == 'f') {
-            Dir newDir = Dir(currSystem->getCurrUser().getUserId(), 66);
-            tableOfFiles.insert(std::make_pair(std::make_pair(name, *this), newDir));
+            File newFile = File(currSystem->getCurrUser().getUserId());
+            File *ptrFileDescriptor = &newFile;
+            tableOfFiles.insert(std::make_pair(std::make_pair(name, this), ptrFileDescriptor));
         }
         else if (fileOrDir == 'd') {
-
+            Dir newDir = Dir(currSystem->getCurrUser().getUserId());
+            AbstractFile *ptrDirDescriptor = &newDir;
+            tableOfFiles.insert(std::make_pair(std::make_pair(name, this), ptrDirDescriptor));
         }
         else
             throw std::invalid_argument("creating unknown type");

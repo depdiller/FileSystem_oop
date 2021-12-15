@@ -6,7 +6,7 @@
 #include <utility>
 
 namespace System {
-    User::User(const std::string& name) : name(name){
+    User::User(const std::string& name) : name(name) {
         if (name == "root") {
             userId = 1;
             this->name = name;
@@ -56,7 +56,6 @@ namespace System {
             userId = toCopy.userId;
             name = toCopy.name;
             key = toCopy.key;
-            homeDir = toCopy.homeDir;
         }
         return *this;
     }

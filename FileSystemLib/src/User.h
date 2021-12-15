@@ -13,7 +13,6 @@ namespace System {
         size_t userId;
         std::string name;
         size_t key;
-        Dir &homeDir;
     public:
         // constructors
         User(const std::string& name);

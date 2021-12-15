@@ -5,7 +5,7 @@
 
 namespace System {
     Descriptor::Descriptor(std::string streamName, int indexInTable) {
-        this->streamName;
+        this->streamName = streamName;
         virtualAddress = standardOffset * indexInTable;
     }
 

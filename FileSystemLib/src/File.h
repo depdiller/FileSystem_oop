@@ -42,7 +42,6 @@ namespace System {
     // additional outside functions
     std::string currentDateTime();
 }
-
 #endif //FILESYSTEM_FILE_H
 
 /*TODO
