@@ -27,8 +27,12 @@ namespace System {
         virtual void information () const = 0;
         void edit();
         // "r" "w" "x"
-        bool checkPermission(const std::string& parameter) const;
+        bool checkPermission(size_t currUserId, const std::string& parameter) const;
     };
 }
+/*TODO
+ * 1. Добавить виртуальный деструктор
+ * 2. Добавть
+ * */
 
 #endif //FILESYSTEM_ABSTRACTFILE_H

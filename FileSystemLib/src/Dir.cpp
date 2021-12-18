@@ -10,14 +10,14 @@ namespace System {
         virtualAddress = bytesForDir;
     }
 
-    void Dir::create(char fileOrDir, const std::string& name) {
+    void Dir::create(size_t currUserId, char fileOrDir, const std::string& name) {
         if (fileOrDir == 'f') {
-            File newFile = File(currSystem->getCurrUser().getUserId());
+            File newFile = File(currUserId);
             File *ptrFileDescriptor = &newFile;
             tableOfFiles.insert(std::make_pair(std::make_pair(name, this), ptrFileDescriptor));
         }
         else if (fileOrDir == 'd') {
-            Dir newDir = Dir(currSystem->getCurrUser().getUserId());
+            Dir newDir = Dir(currUserId);
             AbstractFile *ptrDirDescriptor = &newDir;
             tableOfFiles.insert(std::make_pair(std::make_pair(name, this), ptrDirDescriptor));
         }

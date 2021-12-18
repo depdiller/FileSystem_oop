@@ -117,65 +117,51 @@ build cmake_object_order_depends_target_fileSystem_test: phony || cmake_object_o
 build CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/fileSystem_test.cpp || cmake_object_order_depends_target_fileSystem_test
   DEP_FILE = CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
   OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/FileSystem.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/FileSystem.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/FileSystem.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/descriptor_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/User.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/User.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/User.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/file_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/file_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/file_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Dir.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Dir.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Dir.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/encryptedFile_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/AbstractFile.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/AbstractFile.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/AbstractFile.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/permissions_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Permissions.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Permissions.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Permissions.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/user_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/user_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/user_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Descriptor.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Descriptor.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Descriptor.cpp.o.d
+build CMakeFiles/fileSystem_test.dir/dir_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/dir_test.cpp || cmake_object_order_depends_target_fileSystem_test
+  DEP_FILE = CMakeFiles/fileSystem_test.dir/dir_test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
-
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/File.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/File.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/File.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
-
-build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/EncryptFile.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/EncryptFile.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/EncryptFile.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
 
 # =============================================================================
@@ -185,9 +171,9 @@ build CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_
 #############################################
 # Link the executable fileSystem_test
 
-build fileSystem_test: CXX_EXECUTABLE_LINKER__fileSystem_test_Debug CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/FileSystem.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/User.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Dir.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/AbstractFile.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Permissions.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Descriptor.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/File.cpp.o CMakeFiles/fileSystem_test.dir/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/EncryptFile.cpp.o | lib/libgtest_maind.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+build fileSystem_test: CXX_EXECUTABLE_LINKER__fileSystem_test_Debug CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o CMakeFiles/fileSystem_test.dir/file_test.cpp.o CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o CMakeFiles/fileSystem_test.dir/user_test.cpp.o CMakeFiles/fileSystem_test.dir/dir_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
-  LINK_LIBRARIES = lib/libgtest_maind.a  lib/libgtestd.a
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a  lib/libgtestd.a
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
   POST_BUILD = :
   PRE_LINK = :

@@ -1,13 +1,11 @@
 #include <iostream>
-#include "FileSystemLib/src/FileSystem.h"
-#include "FileSystemLib/src/AbstractFile.h"
 #include <cstdio>
+#include "FileSystem.h"
 
 int main() {
     FILE *associatedFile;
     associatedFile = fopen("C:\\disk.txt", "a+");
     if (associatedFile != nullptr) {
         System::FileSystem system = System::FileSystem(associatedFile);
-        System::currSystem = &system;
     }
 }

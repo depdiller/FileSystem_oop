@@ -1,6 +1,3 @@
-//
-// Created by stani on 05.12.2021.
-//
 #include "User.h"
 #include <iostream>
 #include <utility>

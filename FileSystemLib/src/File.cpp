@@ -32,22 +32,21 @@ namespace System {
                   this->size << std::endl << std::endl;
     }
 
-    FILE *File::open(const std::string &parameter, const std::string &streamName) {
-        FILE *tmp = currSystem->getDisk();
-        if (this->checkPermission(parameter)) {
+    FILE *File::open(FILE *currSystemDisk, size_t currUserId, const std::string &parameter, const std::string &streamName) {
+        if (this->checkPermission(currUserId, parameter)) {
             std::set<Descriptor>::iterator it;
             it = TableOfStreams.find(streamName);
             if (it != TableOfStreams.end()) {
-                std::fseek(tmp, standardOffset + (unsigned int)size, SEEK_CUR);
-                return tmp;
+                std::fseek(currSystemDisk, standardOffset + (unsigned int)size, SEEK_CUR);
+                return currSystemDisk;
             } else
                 return nullptr;
         } else
             throw std::invalid_argument("no access to such operation");
     }
 
-    FILE *File::close() {
-        return currSystem->getDisk();
+    FILE *File::close(FILE *currSystemDisk) {
+        return currSystemDisk;
     }
 
     void File::writeToFile(FILE *ptrFromOpen, const std::string &data) {

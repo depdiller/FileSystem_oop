@@ -28,8 +28,8 @@ namespace System {
         std::set<Descriptor> getStreams() { return this->TableOfStreams; }
         // additional
             // parameter = "r"/"w"/"rw"
-        FILE *open(const std::string& parameter, const std::string& streamName = "MAIN");
-        FILE *close();
+        FILE *open(FILE *currSystemDisk, size_t currUserId, const std::string& parameter, const std::string& streamName = "MAIN");
+        FILE *close(FILE *currSystemDisk);
         void writeToFile(FILE *ptrFromOpen, const std::string& data);
             // stringLength ~= size of bytes
         std::string readFile(FILE *ptrFromOpen, size_t stringLength);

@@ -24,8 +24,6 @@ namespace System {
     public:
         // constructors
         FileSystem() = delete;
-        /// @param associatedFile
-        /// @param username
         FileSystem(FILE *associatedFile, const std::string& username = "root");
         // getters
         FILE *getDisk() const { return disk; }
@@ -45,7 +43,7 @@ namespace System {
         int exit();
     };
 
-    extern FileSystem *currSystem;
+//    extern FileSystem *currSystem;
 }
 
 /*TODO:
@@ -53,5 +51,5 @@ namespace System {
  * связанная с ассоциированным с файловой системой файлом.
  * Потом через fseek должно отсчитываться смещение по
  * файлу.
- * 2. Проверить нужно ли оставлять extern или можно убрать*/
+ * 2. Проверить нужно ли оставлять extern или можно убрать */
 #endif //FILESYSTEM_FILESYSTEM_H

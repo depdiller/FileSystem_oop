@@ -24,8 +24,8 @@ namespace System {
         return *this;
     }
 
-    bool AbstractFile::checkPermission(const std::string &parameter) const {
-        bool userCheck = currSystem->getCurrUser().getUserId() == this->ownerId;
+    bool AbstractFile::checkPermission(size_t currUserId, const std::string &parameter) const {
+        bool userCheck = currUserId == this->ownerId;
         if (parameter != "r" || parameter != "w" || parameter != "x") {
             throw std::invalid_argument("invalid permission check");
         } else if (parameter == "r") {

@@ -28,7 +28,7 @@ namespace System {
         // additional methods
         void showContentDir();
             // fileOrDir = 'f' / 'd'
-        void create(char fileOrDir, const std::string& name);
+        void create(size_t currUserId, char fileOrDir, const std::string& name);
         void copy();
         void move();
         void deleteFile();
