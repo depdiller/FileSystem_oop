@@ -1,7 +1,9 @@
-//
-// Created by stani on 24.11.2021.
-//
-
+/**
+ * \file
+ * \brief Заголовочный файл класса Обычного Файла
+ *
+ * Данный класс наследуется от обычного Файла
+ * */
 #ifndef FILESYSTEM_FILE_H
 #define FILESYSTEM_FILE_H
 

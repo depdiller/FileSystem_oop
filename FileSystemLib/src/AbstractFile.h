@@ -13,6 +13,10 @@
 
 namespace System {
     /**
+     * \author Voronov Stanislav
+     * \version 1.0
+     * \date декабрь 2021
+     *
      * \brief Класс АбстрактныйФайл
      *
      * Класс созданный для удобства в иерархии классов,
@@ -29,12 +33,14 @@ namespace System {
          *
          * @param ownerId идентификатор пользователя
          * @param uoPermissions права доступа для user & others
+         * \throw invalid_argument в случае некорректного параметра прав доступа
          */
         explicit AbstractFile(size_t ownerId, unsigned int uoPermissions = 66);
         /**
          * \brief сеттер, устанавливающий новые права доступа
          *
          * @param codePermissions новые права доступа для user & others
+         * \throw invalid_argument в случае некорректного параметра прав доступа
          * */
         AbstractFile& setPermissions(unsigned int codePermissions);
         /**
@@ -72,6 +78,7 @@ namespace System {
          *
          * @param currUserId идентификатор текущего пользователя файловой системы
          * @param parameter операция которую хотят проделать над файлом: rwx
+         * \throw invalid_argument в случае неверной операции (не rwx)
          * @return подтверждение или отказ к выполнению операции
          */
         bool checkPermission(size_t currUserId, const std::string& parameter) const;
