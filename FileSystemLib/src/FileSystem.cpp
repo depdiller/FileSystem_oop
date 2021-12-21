@@ -78,7 +78,7 @@ namespace System {
         currUser = newUser;
     }
 
-    bool FileSystem::eccryptDecrypt(AbstractFile &) {
+    bool FileSystem::eccryptDecrypt(AbstractFile &file) {
         return false;
     }
 
