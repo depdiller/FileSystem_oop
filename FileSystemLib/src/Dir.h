@@ -12,6 +12,7 @@
 #include "File.h"
 #include <string>
 #include <map>
+#include "Map.h"
 
 namespace System {
     /*виртуальные адреса папок - с начала файла, то есть потоки
@@ -40,7 +41,8 @@ namespace System {
          * таблица ассоциированных с директорией файлов
          * могут быть как файлы, так и поддиректории
          */
-        std::map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
+//        std::map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
+        TemplateMap::Map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
     public:
         /**
          * \brief стандартный конструктор

@@ -290,6 +290,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 //Enables UPDATE_DISCONNECTED behavior just for population of googletest
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 
+//Path to a library.
+FILESYSTEM_LIB:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a
+
 //Value Computed by CMake
 FileSystem_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug
 
@@ -320,6 +323,9 @@ Lib_IS_TOP_LEVEL:STATIC=OFF
 
 //Value Computed by CMake
 Lib_SOURCE_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib
+
+//Path to a library.
+MAP_LIB:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/cmake-build-debug/libmapTemplate.a
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/_deps/googletest-build/googlemock
@@ -375,6 +381,15 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Value Computed by CMake
+mapLib_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/map
+
+//Value Computed by CMake
+mapLib_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+mapLib_SOURCE_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map
 
 
 ########################

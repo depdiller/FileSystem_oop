@@ -75,7 +75,7 @@ build cmake_object_order_depends_target_FileSystem: phony || cmake_object_order_
 build CMakeFiles/FileSystem.dir/main.cpp.o: CXX_COMPILER__FileSystem_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/main.cpp || cmake_object_order_depends_target_FileSystem
   DEP_FILE = CMakeFiles/FileSystem.dir/main.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/src
   OBJECT_DIR = CMakeFiles/FileSystem.dir
   OBJECT_FILE_DIR = CMakeFiles/FileSystem.dir
 
@@ -87,9 +87,9 @@ build CMakeFiles/FileSystem.dir/main.cpp.o: CXX_COMPILER__FileSystem_Debug /User
 #############################################
 # Link the executable FileSystem
 
-build FileSystem: CXX_EXECUTABLE_LINKER__FileSystem_Debug CMakeFiles/FileSystem.dir/main.cpp.o | FileSystemLib/libFileSystemLib.a || FileSystemLib/libFileSystemLib.a
+build FileSystem: CXX_EXECUTABLE_LINKER__FileSystem_Debug CMakeFiles/FileSystem.dir/main.cpp.o | FileSystemLib/libFileSystemLib.a ../map/cmake-build-debug/libmapTemplate.a || FileSystemLib/libFileSystemLib.a
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
-  LINK_LIBRARIES = FileSystemLib/libFileSystemLib.a
+  LINK_LIBRARIES = FileSystemLib/libFileSystemLib.a  ../map/cmake-build-debug/libmapTemplate.a
   OBJECT_DIR = CMakeFiles/FileSystem.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -136,48 +136,56 @@ build cmake_object_order_depends_target_FileSystemLib: phony || FileSystemLib/CM
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/AbstractFile.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Descriptor.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Dir.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/EncryptFile.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/File.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/FileSystem.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/Permissions.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 
 build FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.o: CXX_COMPILER__FileSystemLib_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src/User.cpp || cmake_object_order_depends_target_FileSystemLib
   DEP_FILE = FileSystemLib/CMakeFiles/FileSystemLib.dir/src/User.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/../map/src
   OBJECT_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir
   OBJECT_FILE_DIR = FileSystemLib/CMakeFiles/FileSystemLib.dir/src
 

@@ -26,13 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 10,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
 				"line" : 12,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 10,
 				"parent" : 0
 			},
 			{
@@ -60,6 +66,10 @@
 				{
 					"backtrace" : 3,
 					"path" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/src"
 				}
 			],
 			"language" : "CXX",
@@ -100,6 +110,10 @@
 			{
 				"backtrace" : 2,
 				"fragment" : "FileSystemLib/libFileSystemLib.a",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "../map/cmake-build-debug/libmapTemplate.a",
 				"role" : "libraries"
 			}
 		],

@@ -1502,6 +1502,18 @@
 			"value" : "OFF"
 		},
 		{
+			"name" : "FILESYSTEM_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python",
 			"properties" : 
 			[
@@ -1644,6 +1656,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib"
+		},
+		{
+			"name" : "MAP_LIB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/cmake-build-debug/libmapTemplate.a"
 		},
 		{
 			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
@@ -1944,6 +1968,42 @@
 			],
 			"type" : "STATIC",
 			"value" : "general;gtest;"
+		},
+		{
+			"name" : "mapLib_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/map"
+		},
+		{
+			"name" : "mapLib_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "OFF"
+		},
+		{
+			"name" : "mapLib_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map"
 		},
 		{
 			"name" : "targets_export_name",
