@@ -20,7 +20,13 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2,
+						3,
+						4,
+						9,
+						10
 					]
 				},
 				{
@@ -46,7 +52,7 @@
 						3
 					],
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-_deps.googletest-build.googlemock-Debug-58a6b33c40b176032a29.json",
+					"jsonFile" : "directory-_deps.googletest-build.googlemock-Debug-d118f77af501fe40b92c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.8.12"
@@ -56,14 +62,14 @@
 					"source" : "cmake-build-debug/_deps/googletest-src/googlemock",
 					"targetIndexes" : 
 					[
-						1,
-						2
+						5,
+						6
 					]
 				},
 				{
 					"build" : "_deps/googletest-build/googletest",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-_deps.googletest-build.googletest-Debug-baa8421929d6b781ad39.json",
+					"jsonFile" : "directory-_deps.googletest-build.googletest-Debug-3e7c8ee3d548b5507641.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "2.8.12"
@@ -73,8 +79,8 @@
 					"source" : "cmake-build-debug/_deps/googletest-src/googletest",
 					"targetIndexes" : 
 					[
-						3,
-						4
+						7,
+						8
 					]
 				}
 			],
@@ -93,7 +99,13 @@
 					"name" : "Google_test",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1,
+						2,
+						3,
+						4,
+						9,
+						10
 					]
 				},
 				{
@@ -121,8 +133,8 @@
 					"parentIndex" : 1,
 					"targetIndexes" : 
 					[
-						1,
-						2
+						5,
+						6
 					]
 				},
 				{
@@ -134,8 +146,8 @@
 					"parentIndex" : 2,
 					"targetIndexes" : 
 					[
-						3,
-						4
+						7,
+						8
 					]
 				}
 			],
@@ -143,38 +155,80 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "descriptor_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-descriptor_test-Debug-f136432c48f277e4b3e1.json",
+					"name" : "descriptor_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dir_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dir_test-Debug-68408a4e609405535d66.json",
+					"name" : "dir_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "encryptedFile_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-encryptedFile_test-Debug-b755f6a85e10b072c0bf.json",
+					"name" : "encryptedFile_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "fileSystem_test::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-fileSystem_test-Debug-17f438b687dd08a98db7.json",
+					"jsonFile" : "target-fileSystem_test-Debug-c7404cbe86d0abb9c034.json",
 					"name" : "fileSystem_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "file_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-file_test-Debug-d82cf91fedd1348dcc54.json",
+					"name" : "file_test",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "gmock::@0f7bb11d64f3678238c7",
-					"jsonFile" : "target-gmock-Debug-09c86acce0e2b073cbaf.json",
+					"jsonFile" : "target-gmock-Debug-9a0e5f3b1715d1cb31e6.json",
 					"name" : "gmock",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "gmock_main::@0f7bb11d64f3678238c7",
-					"jsonFile" : "target-gmock_main-Debug-d4ab5fc2c92aba6c75ee.json",
+					"jsonFile" : "target-gmock_main-Debug-7d21af27f1334e75300e.json",
 					"name" : "gmock_main",
 					"projectIndex" : 2
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest::@1ea2dfc0605fe3ab2a3f",
-					"jsonFile" : "target-gtest-Debug-f0fb46e57b63dffb1718.json",
+					"jsonFile" : "target-gtest-Debug-f4df98e4b0e997e829fd.json",
 					"name" : "gtest",
 					"projectIndex" : 3
 				},
 				{
 					"directoryIndex" : 3,
 					"id" : "gtest_main::@1ea2dfc0605fe3ab2a3f",
-					"jsonFile" : "target-gtest_main-Debug-b3a78525302b14226787.json",
+					"jsonFile" : "target-gtest_main-Debug-af1801449fbbb17f35ce.json",
 					"name" : "gtest_main",
 					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "permissions_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-permissions_test-Debug-4b83b724dbec8d68e0f7.json",
+					"name" : "permissions_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "user_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-user_test-Debug-448f7517ba60db20e29b.json",
+					"name" : "user_test",
+					"projectIndex" : 0
 				}
 			]
 		}

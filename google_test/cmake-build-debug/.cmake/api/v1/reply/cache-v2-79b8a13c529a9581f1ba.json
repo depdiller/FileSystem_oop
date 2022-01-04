@@ -1039,7 +1039,7 @@
 				}
 			],
 			"type" : "PATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk"
+			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -1430,18 +1430,6 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "CURL_LIBRARY",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd"
-		},
-		{
 			"name" : "FETCHCONTENT_BASE_DIR",
 			"properties" : 
 			[
@@ -1514,18 +1502,6 @@
 			"value" : "OFF"
 		},
 		{
-			"name" : "FILESYSTEM_LI",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "FILESYSTEM_LI-NOTFOUND"
-		},
-		{
 			"name" : "FILESYSTEM_LIB",
 			"properties" : 
 			[
@@ -1535,31 +1511,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a"
-		},
-		{
-			"name" : "FILESYSTEM_LIBRARY",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd"
-		},
-		{
-			"name" : "FILESYSTEM_LIB_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for FILESYSTEM_LIB."
-				}
-			],
-			"type" : "PATH",
-			"value" : "FILESYSTEM_LIB_DIR-NOTFOUND"
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python",
@@ -1571,7 +1523,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "[/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/bin/python3.8][cfound components: Interpreter ][v3.8.9()]"
+			"value" : "[/opt/homebrew/bin/python3.9][cfound components: Interpreter ][v3.9.9()]"
 		},
 		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Threads",
@@ -1584,18 +1536,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "[TRUE][v()]"
-		},
-		{
-			"name" : "FileSystemLib",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "FileSystemLib-NOTFOUND"
 		},
 		{
 			"name" : "Google_test_BINARY_DIR",
@@ -1667,7 +1607,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/bin/python3.8"
+			"value" : "/opt/homebrew/bin/python3.9"
 		},
 		{
 			"name" : "_Python_INTERPRETER_PROPERTIES",
@@ -1679,7 +1619,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "Python;3;8;2;64;;cpython-38-darwin;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8;/Library/Python/3.8/site-packages;/Library/Python/3.8/site-packages"
+			"value" : "Python;3;9;9;64;;cpython-39-darwin;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages"
 		},
 		{
 			"name" : "_Python_INTERPRETER_SIGNATURE",
@@ -1691,19 +1631,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "08aff68630bec5a4c6da4f45ab18d320"
-		},
-		{
-			"name" : "f_LIBRARY",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd"
+			"value" : "e0996b5bb4224435b936237941312af9"
 		},
 		{
 			"name" : "generated_dir",

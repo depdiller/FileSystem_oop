@@ -182,7 +182,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 
 //The product will be built against the headers and libraries located
 // inside the indicated SDK.
-CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+CMAKE_OSX_SYSROOT:PATH=/Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
 
 //Value Computed by CMake
 CMAKE_PROJECT_DESCRIPTION:STATIC=
@@ -270,9 +270,6 @@ CMAKE_STRIP:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Path to a library.
-CURL_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd
-
 //Directory under which to collect all populated content
 FETCHCONTENT_BASE_DIR:PATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps
 
@@ -294,19 +291,7 @@ FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 
 //Path to a library.
-FILESYSTEM_LI:FILEPATH=FILESYSTEM_LI-NOTFOUND
-
-//Path to a library.
-FILESYSTEM_LIB:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a
-
-//Path to a library.
-FILESYSTEM_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd
-
-//The directory containing a CMake configuration file for FILESYSTEM_LIB.
-FILESYSTEM_LIB_DIR:PATH=FILESYSTEM_LIB_DIR-NOTFOUND
-
-//Path to a library.
-FileSystemLib:FILEPATH=FileSystemLib-NOTFOUND
+FILESYSTEM_LIB:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a
 
 //Value Computed by CMake
 Google_test_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug
@@ -320,9 +305,6 @@ Google_test_SOURCE_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/go
 //Enable installation of googletest. (Projects embedding googletest
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
-
-//Path to a library.
-f_LIBRARY:FILEPATH=/Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/lib/libcurl.tbd
 
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-build/googlemock
@@ -552,16 +534,16 @@ CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Python
-FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/bin/python3.8][cfound components: Interpreter ][v3.8.9()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/opt/homebrew/bin/python3.9][cfound components: Interpreter ][v3.9.9()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //Path to a program.
-_Python_EXECUTABLE:INTERNAL=/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/bin/python3.8
+_Python_EXECUTABLE:INTERNAL=/opt/homebrew/bin/python3.9
 //Python Properties
-_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;8;2;64;;cpython-38-darwin;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8;/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.8/lib/python3.8;/Library/Python/3.8/site-packages;/Library/Python/3.8/site-packages
-_Python_INTERPRETER_SIGNATURE:INTERNAL=08aff68630bec5a4c6da4f45ab18d320
+_Python_INTERPRETER_PROPERTIES:INTERNAL=Python;3;9;9;64;;cpython-39-darwin;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages;/opt/homebrew/opt/python@3.9/Frameworks/Python.framework/Versions/3.9/lib/python3.9/site-packages
+_Python_INTERPRETER_SIGNATURE:INTERNAL=e0996b5bb4224435b936237941312af9
 generated_dir:INTERNAL=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-build/googletest/generated
 //ADVANCED property for variable: gmock_build_tests
 gmock_build_tests-ADVANCED:INTERNAL=1

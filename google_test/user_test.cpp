@@ -3,12 +3,12 @@
 #include <utility>
 
 TEST(Constructors, AllConstructors) {
-    System::User user1 = System::User("user1");
+    System::User user1("user1");
     ASSERT_EQ(user1.getName(), "user1");
     ASSERT_EQ(user1.getUserId(), std::hash<std::string>{}("user1"));
     ASSERT_EQ(user1.getKey(), std::string("user1").capacity());
 
-    System::User user2 = System::User("user2", 14324312312);
+    System::User user2("user2", 14324312312);
     ASSERT_EQ(user2.getKey(), 14324312312);
 }
 
@@ -20,8 +20,8 @@ TEST(Setters, AllSetters) {
 }
 
 TEST(Operators, AllOperators) {
-    System::User user1 = System::User("user1");
-    System::User user2 = System::User("user2");
+    System::User user1("user1");
+    System::User user2("user2");
     ASSERT_EQ(true, user1 < user2);
     ASSERT_EQ(true, user1 < "user2");
     ASSERT_EQ(false, user1 == "user2");

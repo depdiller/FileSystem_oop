@@ -12,15 +12,17 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 find_library(FILESYSTEM_LIB libFileSystemLib.a
-        PATHS ../cmake-build-debug/FileSystemLib/)
-
+        PATHS ../FileSystemLib/cmake-build-debug/)
+#find_library(MAP_LIB libmapTemplate.a
+#        PATHS ../map/cmake-build-debug/)
 link_libraries(gtest_main ${FILESYSTEM_LIB})
 include_directories(../FileSystemLib/src)
+include_directories(../map/src)
 
-add_executable(fileSystem_test fileSystem_test.cpp
-        descriptor_test.cpp
-        file_test.cpp
-        encryptedFile_test.cpp
-        permissions_test.cpp
-        user_test.cpp
-        dir_test.cpp)
+add_executable(fileSystem_test fileSystem_test.cpp)
+add_executable(descriptor_test descriptor_test.cpp)
+add_executable(file_test file_test.cpp)
+add_executable(encryptedFile_test encryptedFile_test.cpp)
+add_executable(permissions_test permissions_test.cpp)
+add_executable(user_test user_test.cpp)
+add_executable(dir_test dir_test.cpp)

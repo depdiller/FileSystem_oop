@@ -42,38 +42,15 @@ include CMakeFiles/rules.ninja
 cmake_ninja_workdir = /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/
 
 #############################################
-# Utility command for rebuild_cache
+# Utility command for install/local
 
-build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test -B/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug
-  DESC = Running CMake to regenerate build system...
+build CMakeFiles/install/local.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+  DESC = Installing only the local directory...
   pool = console
   restat = 1
 
-build rebuild_cache: phony CMakeFiles/rebuild_cache.util
-
-
-#############################################
-# Utility command for edit_cache
-
-build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-  DESC = No interactive CMake dialog available...
-  restat = 1
-
-build edit_cache: phony CMakeFiles/edit_cache.util
-
-
-#############################################
-# Utility command for install/strip
-
-build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-  DESC = Installing the project stripped...
-  pool = console
-  restat = 1
-
-build install/strip: phony CMakeFiles/install/strip.util
+build install/local: phony CMakeFiles/install/local.util
 
 
 #############################################
@@ -87,23 +64,89 @@ build CMakeFiles/install.util: CUSTOM_COMMAND all
 
 build install: phony CMakeFiles/install.util
 
+# =============================================================================
+# Object build statements for EXECUTABLE target dir_test
+
+
+#############################################
+# Order-only phony target for dir_test
+
+build cmake_object_order_depends_target_dir_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/dir_test.dir/dir_test.cpp.o: CXX_COMPILER__dir_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/dir_test.cpp || cmake_object_order_depends_target_dir_test
+  DEP_FILE = CMakeFiles/dir_test.dir/dir_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/dir_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/dir_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target dir_test
+
+
+#############################################
+# Link the executable dir_test
+
+build dir_test: CXX_EXECUTABLE_LINKER__dir_test_Debug CMakeFiles/dir_test.dir/dir_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/dir_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = dir_test
+  TARGET_PDB = dir_test.dbg
+
 
 #############################################
 # Utility command for list_install_components
 
 build list_install_components: phony
 
+# =============================================================================
+# Object build statements for EXECUTABLE target file_test
+
 
 #############################################
-# Utility command for install/local
+# Order-only phony target for file_test
 
-build CMakeFiles/install/local.util: CUSTOM_COMMAND all
-  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-  DESC = Installing only the local directory...
+build cmake_object_order_depends_target_file_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/file_test.dir/file_test.cpp.o: CXX_COMPILER__file_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/file_test.cpp || cmake_object_order_depends_target_file_test
+  DEP_FILE = CMakeFiles/file_test.dir/file_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/file_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/file_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target file_test
+
+
+#############################################
+# Link the executable file_test
+
+build file_test: CXX_EXECUTABLE_LINKER__file_test_Debug CMakeFiles/file_test.dir/file_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/file_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = file_test
+  TARGET_PDB = file_test.dbg
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test -B/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug
+  DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build install/local: phony CMakeFiles/install/local.util
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Object build statements for EXECUTABLE target fileSystem_test
@@ -116,50 +159,8 @@ build cmake_object_order_depends_target_fileSystem_test: phony || cmake_object_o
 
 build CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/fileSystem_test.cpp || cmake_object_order_depends_target_fileSystem_test
   DEP_FILE = CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/descriptor_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/file_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/file_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/file_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/encryptedFile_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/permissions_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/user_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/user_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/user_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
-  OBJECT_DIR = CMakeFiles/fileSystem_test.dir
-  OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
-
-build CMakeFiles/fileSystem_test.dir/dir_test.cpp.o: CXX_COMPILER__fileSystem_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/dir_test.cpp || cmake_object_order_depends_target_fileSystem_test
-  DEP_FILE = CMakeFiles/fileSystem_test.dir/dir_test.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
   OBJECT_FILE_DIR = CMakeFiles/fileSystem_test.dir
 
@@ -171,14 +172,169 @@ build CMakeFiles/fileSystem_test.dir/dir_test.cpp.o: CXX_COMPILER__fileSystem_te
 #############################################
 # Link the executable fileSystem_test
 
-build fileSystem_test: CXX_EXECUTABLE_LINKER__fileSystem_test_Debug CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o CMakeFiles/fileSystem_test.dir/descriptor_test.cpp.o CMakeFiles/fileSystem_test.dir/file_test.cpp.o CMakeFiles/fileSystem_test.dir/encryptedFile_test.cpp.o CMakeFiles/fileSystem_test.dir/permissions_test.cpp.o CMakeFiles/fileSystem_test.dir/user_test.cpp.o CMakeFiles/fileSystem_test.dir/dir_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
-  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a  lib/libgtestd.a
+build fileSystem_test: CXX_EXECUTABLE_LINKER__fileSystem_test_Debug CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
   OBJECT_DIR = CMakeFiles/fileSystem_test.dir
   POST_BUILD = :
   PRE_LINK = :
   TARGET_FILE = fileSystem_test
   TARGET_PDB = fileSystem_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target encryptedFile_test
+
+
+#############################################
+# Order-only phony target for encryptedFile_test
+
+build cmake_object_order_depends_target_encryptedFile_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/encryptedFile_test.dir/encryptedFile_test.cpp.o: CXX_COMPILER__encryptedFile_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/encryptedFile_test.cpp || cmake_object_order_depends_target_encryptedFile_test
+  DEP_FILE = CMakeFiles/encryptedFile_test.dir/encryptedFile_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/encryptedFile_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/encryptedFile_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target encryptedFile_test
+
+
+#############################################
+# Link the executable encryptedFile_test
+
+build encryptedFile_test: CXX_EXECUTABLE_LINKER__encryptedFile_test_Debug CMakeFiles/encryptedFile_test.dir/encryptedFile_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/encryptedFile_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = encryptedFile_test
+  TARGET_PDB = encryptedFile_test.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target descriptor_test
+
+
+#############################################
+# Order-only phony target for descriptor_test
+
+build cmake_object_order_depends_target_descriptor_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/descriptor_test.dir/descriptor_test.cpp.o: CXX_COMPILER__descriptor_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/descriptor_test.cpp || cmake_object_order_depends_target_descriptor_test
+  DEP_FILE = CMakeFiles/descriptor_test.dir/descriptor_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/descriptor_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/descriptor_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target descriptor_test
+
+
+#############################################
+# Link the executable descriptor_test
+
+build descriptor_test: CXX_EXECUTABLE_LINKER__descriptor_test_Debug CMakeFiles/descriptor_test.dir/descriptor_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/descriptor_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = descriptor_test
+  TARGET_PDB = descriptor_test.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target permissions_test
+
+
+#############################################
+# Order-only phony target for permissions_test
+
+build cmake_object_order_depends_target_permissions_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/permissions_test.dir/permissions_test.cpp.o: CXX_COMPILER__permissions_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/permissions_test.cpp || cmake_object_order_depends_target_permissions_test
+  DEP_FILE = CMakeFiles/permissions_test.dir/permissions_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/permissions_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/permissions_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target permissions_test
+
+
+#############################################
+# Link the executable permissions_test
+
+build permissions_test: CXX_EXECUTABLE_LINKER__permissions_test_Debug CMakeFiles/permissions_test.dir/permissions_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/permissions_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = permissions_test
+  TARGET_PDB = permissions_test.dbg
+
+
+#############################################
+# Utility command for install/strip
+
+build CMakeFiles/install/strip.util: CUSTOM_COMMAND all
+  COMMAND = cd /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+  DESC = Installing the project stripped...
+  pool = console
+  restat = 1
+
+build install/strip: phony CMakeFiles/install/strip.util
+
+# =============================================================================
+# Object build statements for EXECUTABLE target user_test
+
+
+#############################################
+# Order-only phony target for user_test
+
+build cmake_object_order_depends_target_user_test: phony || cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
+
+build CMakeFiles/user_test.dir/user_test.cpp.o: CXX_COMPILER__user_test_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/user_test.cpp || cmake_object_order_depends_target_user_test
+  DEP_FILE = CMakeFiles/user_test.dir/user_test.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -std=gnu++2a
+  INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/../map/src -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/user_test.dir
+  OBJECT_FILE_DIR = CMakeFiles/user_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target user_test
+
+
+#############################################
+# Link the executable user_test
+
+build user_test: CXX_EXECUTABLE_LINKER__user_test_Debug CMakeFiles/user_test.dir/user_test.cpp.o | lib/libgtest_maind.a /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a lib/libgtestd.a || lib/libgtest_maind.a lib/libgtestd.a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
+  LINK_LIBRARIES = lib/libgtest_maind.a  /Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a  lib/libgtestd.a
+  OBJECT_DIR = CMakeFiles/user_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = user_test
+  TARGET_PDB = user_test.dbg
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -302,7 +458,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
   INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock/include -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src
@@ -316,7 +472,7 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o:
 # Link the static library lib/libgmockd.a
 
 build lib/libgmockd.a: CXX_STATIC_LIBRARY_LINKER__gmock_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o || lib/libgtestd.a
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
   POST_BUILD = :
@@ -358,7 +514,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
   INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googlemock -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src
@@ -372,7 +528,7 @@ build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main
 # Link the static library lib/libgmock_maind.a
 
 build lib/libgmock_maind.a: CXX_STATIC_LIBRARY_LINKER__gmock_main_Debug _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o || lib/libgmockd.a lib/libgtestd.a
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
   POST_BUILD = :
@@ -467,7 +623,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
   INCLUDES = -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src
@@ -481,7 +637,7 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main
 # Link the static library lib/libgtest_maind.a
 
 build lib/libgtest_maind.a: CXX_STATIC_LIBRARY_LINKER__gtest_main_Debug _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o || lib/libgtestd.a
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
   POST_BUILD = :
@@ -500,7 +656,7 @@ build cmake_object_order_depends_target_gtest: phony || _deps/googletest-build/g
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk -Wall -Wshadow -Werror -Wconversion -DGTEST_HAS_PTHREAD=1 -fexceptions -W -Wpointer-arith -Wreturn-type -Wcast-qual -Wwrite-strings -Wswitch -Wunused-parameter -Wcast-align -Wchar-subscripts -Winline -Wredundant-decls -std=c++2a
   INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest/include -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src
@@ -514,7 +670,7 @@ build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o:
 # Link the static library lib/libgtestd.a
 
 build lib/libgtestd.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o
-  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
+  ARCH_FLAGS = -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
   POST_BUILD = :
@@ -549,7 +705,7 @@ build libgtestd.a: phony lib/libgtestd.a
 #############################################
 # Folder: /Users/stanislavvoronov/oop/lab4/FileSystem_oop/google_test/cmake-build-debug
 
-build all: phony fileSystem_test _deps/googletest-build/all
+build all: phony dir_test file_test fileSystem_test encryptedFile_test descriptor_test permissions_test user_test _deps/googletest-build/all
 
 # =============================================================================
 
