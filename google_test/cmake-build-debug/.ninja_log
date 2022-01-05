@@ -1,13 +1,6 @@
 # ninja log v5
-2	475	1641297726193452604	CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o	b08703f04647f39d
-1536	1560	1641290597910250000	lib/libgtestd.a	49d0bf04b6f1a1e1
-1560	1573	1641290597922965000	lib/libgtest_maind.a	43ca529d8fa44cc5
-447	497	1641298244207573269	user_test	271719669a5adebb
-1	1536	1641290597881237059	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	6d5d3579a20dabb8
-2	423	1641298458810181077	CMakeFiles/permissions_test.dir/permissions_test.cpp.o	3684474d01dc01bb
-423	474	1641298458862306952	permissions_test	a04d8dda70f19817
-476	528	1641297726247835523	fileSystem_test	9534d90fbc49c963
-461	519	1641298497842898430	descriptor_test	c59f84a55a9b2f4d
-1	447	1641298244156253698	CMakeFiles/user_test.dir/user_test.cpp.o	a1de91302e38f124
-0	486	1641290596833664436	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	38242b49a71f9d5f
-1	461	1641298497782713053	CMakeFiles/descriptor_test.dir/descriptor_test.cpp.o	9ad0aea654640a35
+1	426	1641415226435095067	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	38242b49a71f9d5f
+0	526	1641415226535167946	CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o	b08703f04647f39d
+1	1302	1641415227309500118	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	6d5d3579a20dabb8
+1302	1326	1641415227338635000	lib/libgtestd.a	49d0bf04b6f1a1e1
+1327	1338	1641415227350644000	lib/libgtest_maind.a	43ca529d8fa44cc5
