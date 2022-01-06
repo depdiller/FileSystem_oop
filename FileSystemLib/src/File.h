@@ -3,7 +3,13 @@
  * \brief Заголовочный файл класса Обычного Файла
  *
  * Данный класс описывает поведение Файла в файловой системе,
- * также является родительским для Зашифрованного Файла
+ * также является родительским для Зашифрованного Файла.
+ * Файлы в системе размещаются последовательно, под каждый
+ * выделяется стандартный блок памяти, не превышая размер
+ * которого, можно записывать данные в файл.
+ * Когда создается файл, вместе с ним создается ассоциированный
+ * дескриптор основного потока MAIN, где и лежит виртуальный адрес =
+ * смещению от начала файла.
  * */
 #ifndef FILESYSTEM_FILE_H
 #define FILESYSTEM_FILE_H
@@ -17,6 +23,7 @@
 #include <ctime>
 
 namespace System {
+    const unsigned int stdSize = 1024;
     /**
      * \author Voronov Stanislav
      * \version 1.0
@@ -27,6 +34,7 @@ namespace System {
      * Описывает работу файла на диске
      * */
     class File : public AbstractFile {
+        friend class Descriptor;
     protected:
         std::string dateAndTime; ///< дата и время последнего изменения файла
         std::set<Descriptor> TableOfStreams; ///< таблица ассоциированных с файлом потоков
@@ -38,7 +46,7 @@ namespace System {
          * @param uoPermissions права доступа для user & others
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
-        File(size_t ownerId, unsigned int uoPermissions = 66);
+        File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions = 66);
         /**
          * \brief сеттер для даты и времени последнего изменения файла
          *
@@ -55,21 +63,21 @@ namespace System {
          * \brief геттер для потока потоков, ассоциированных с файлом
          * @return таблица потоков
          */
-        std::set<Descriptor> getStreams() { return this->TableOfStreams; }
+        const std::set<Descriptor> &getStreams() { return this->TableOfStreams; }
         // additional
         // parameter = "r"/"w"/"rw"
 
         /**
          * \brief открывает файл в определенном потоке
          *
-         * @param currSystemDisk указатель на текущий файл-диск
+         * @param file указатель на текущий файл (смещение от диска)
          * @param currUserId идентификатор текущего пользователя
          * @param parameter операция для которой открывается (r w rw)
          * @param streamName имя потока
          * \throw invalid_argument отказ в доступе
          * @return указатель на файл в потоке
          */
-        FILE *open(FILE *currSystemDisk, size_t currUserId, const std::string& parameter, const std::string& streamName = "MAIN");
+        std::pair<FILE*, const std::string&> open(FILE *file, unsigned int currUserId, const std::string& parameter);
         /**
          * \brief закрывает файл
          *
@@ -84,7 +92,7 @@ namespace System {
          * @param data информация для записи в файл
          * \throw invalid_argument файл не открыт ни в каком потоке
          */
-        void writeToFile(FILE *ptrFromOpen, const std::string& data);
+        void writeToFile(std::pair<FILE*, const std::string&>, const std::string &data);
         // stringLength ~= size of bytes
         /**
          * \brief считывание информации из файла
@@ -94,7 +102,7 @@ namespace System {
          * \throw invalid_argument файл не открыт ни в каком потоке
          * @return строка с информацией из файла
          */
-        std::string readFile(FILE *ptrFromOpen, size_t stringLength);
+        std::string readFile(std::pair<FILE*, const std::string&> streamAndOperation, size_t stringLength);
         /**
          * \brief вывод содержимого файла на экран
          *

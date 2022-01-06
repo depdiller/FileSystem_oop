@@ -26,25 +26,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 9,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 12,
+				"line" : 11,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
 				"line" : 10,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 11,
 				"parent" : 0
 			}
 		]
@@ -87,13 +87,6 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "FileSystemLib::@55a7cb299b1bfe980c87"
-		}
-	],
 	"id" : "FileSystem::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
@@ -109,11 +102,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "FileSystemLib/libFileSystemLib.a",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "../map/cmake-build-debug/libmapTemplate.a",
+				"fragment" : "../FileSystemLib/cmake-build-debug/libFileSystemLib.a",
 				"role" : "libraries"
 			}
 		],

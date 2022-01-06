@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "FileSystemLib/libFileSystemLib.a"
+			"path" : "libFileSystemLib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -16,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"FileSystemLib/CMakeLists.txt"
+			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
@@ -26,13 +26,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 12,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 9,
+				"line" : 13,
 				"parent" : 0
 			}
 		]
@@ -43,7 +43,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk"
+					"fragment" : "-g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX12.1.sdk"
 				},
 				{
 					"fragment" : "-std=gnu++14"
@@ -78,13 +78,13 @@
 			]
 		}
 	],
-	"id" : "FileSystemLib::@55a7cb299b1bfe980c87",
+	"id" : "FileSystemLib::@6890427a1f51a3e7e1df",
 	"name" : "FileSystemLib",
 	"nameOnDisk" : "libFileSystemLib.a",
 	"paths" : 
 	{
-		"build" : "FileSystemLib",
-		"source" : "FileSystemLib"
+		"build" : ".",
+		"source" : "."
 	},
 	"sourceGroups" : 
 	[
@@ -122,89 +122,89 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/AbstractFile.cpp",
+			"path" : "src/AbstractFile.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/AbstractFile.h",
+			"path" : "src/AbstractFile.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/Descriptor.cpp",
+			"path" : "src/Descriptor.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/Descriptor.h",
+			"path" : "src/Descriptor.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/Dir.cpp",
+			"path" : "src/Dir.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/Dir.h",
+			"path" : "src/Dir.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/EncryptFile.cpp",
+			"path" : "src/EncryptFile.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/EncryptFile.h",
+			"path" : "src/EncryptFile.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/File.cpp",
+			"path" : "src/File.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/File.h",
+			"path" : "src/File.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/FileSystem.cpp",
+			"path" : "src/FileSystem.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/FileSystem.h",
+			"path" : "src/FileSystem.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/Permissions.cpp",
+			"path" : "src/Permissions.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/Permissions.h",
+			"path" : "src/Permissions.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "FileSystemLib/src/User.cpp",
+			"path" : "src/User.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "FileSystemLib/src/User.h",
+			"path" : "src/User.h",
 			"sourceGroupIndex" : 1
 		}
 	],

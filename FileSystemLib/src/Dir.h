@@ -11,15 +11,10 @@
 #include "AbstractFile.h"
 #include "File.h"
 #include <string>
-#include <map>
 #include "Map.h"
+#include <map>
 
 namespace System {
-    /*виртуальные адреса папок - с начала файла, то есть потоки
-     * начинаются с 1024 байта, а все пространство до этого выделяется
-     * под директории и файлы*/
-    const size_t bytesForDir = 16; ///< стандартное смещение дла расположения папок на диске(файле)
-
     /**
      * \author Voronov Stanislav
      * \version 1.0
@@ -29,10 +24,42 @@ namespace System {
      *
      * Класс для описания характеристик папок, лежащих на диске
      * */
+//    template<typename T, typename V>
+//    class pair {
+//    private:
+//        T first;
+//        V *second;
+//    public:
+//        pair();
+//        pair(T first, V second);
+//        bool operator==(const pair<T, V> &other);
+//        bool operator!=(const pair<T, V> &other);
+//        bool operator<(const pair<T, V> &other);
+//    };
+//    template<typename T, typename V>
+//    bool pair<T, V>::operator==(const pair<T, V> &other) {
+//        return first == other.first;
+//    }
+//    template<typename T, typename V>
+//    bool pair<T, V>::operator!=(const pair<T, V> &other) {
+//        return first != other.first;
+//    }
+//    template<typename T, typename V>
+//    bool pair<T, V>::operator<(const pair<T, V> &other) {
+//        return this->first < other.first;
+//    }
+//
+//    template<typename T, typename V>
+//    pair<T, V>::pair(T first, V second) {
+//        this->first = first;
+//        this->second = second;
+//    }
+//
+//    template<typename T, typename V>
+//    pair<T, V>::pair() = default;;
+
     class Dir : public AbstractFile {
     private:
-        unsigned int virtualAddress; ///< виртуальный адрес папки
-
         /* описатель структуры каталога, в нее входят и подкаталоги
          * еще указатель на родительскую папку, потом указатель на
          * описатель этого файла */
@@ -41,8 +68,9 @@ namespace System {
          * таблица ассоциированных с директорией файлов
          * могут быть как файлы, так и поддиректории
          */
-//        std::map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
-        TemplateMap::Map<std::pair<std::string, Dir*>, AbstractFile*> tableOfFiles;
+
+//        TemplateMap::Map<std::string, Dir*> tableOfDirs;
+        TemplateMap::Map<std::string, File*> tableOfFiles;
     public:
         /**
          * \brief стандартный конструктор
@@ -51,13 +79,9 @@ namespace System {
          * @param uoPermissions набор разрешений для user & others
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
-        Dir(size_t ownerId, unsigned int uoPermissions = 66);
-        /**
-         * \brief вывести содержимое папки
-         */
-        void showContentDir();
-
-            // fileOrDir = 'f' / 'd'
+        Dir(unsigned int ownerId, unsigned int uoPermissions = 66);
+        ~Dir() override = default;;
+        Dir &operator=(const Dir &other);
         /**
          * \brief создать поддиректорию или файл в текущей папке
          *
@@ -66,15 +90,18 @@ namespace System {
          * @param name имя нового объекта
          * \throw invalid_argument при некорректном типе создаваемого объекта
          */
-        void create(size_t currUserId, char fileOrDir, const std::string& name);
+        void createFile(unsigned int currUserId, unsigned int fileVirtualAdr, const std::string& name);
+        void createDir(unsigned int currUserId, const std::string& name);
         /**
          * \brief скопировать файл или подкаталог
          */
-        void copy();
+        void copyFile(unsigned int currUserId, Dir &copyTo, const std::string& filename);
+        void copyDir(unsigned int currUserId, Dir &copyTo, const std::string& dirname);
         /**
          * \brief переместить файл или подкаталог
          */
-        void move();
+        void moveFile(unsigned int currUserId, Dir &toDir, const std::string& filename);
+        void moveDir(unsigned int currUserId, Dir &toDir, const std::string& dirname);
         /**
          * \brief удалить файл или подкатолог
          */
@@ -83,6 +110,10 @@ namespace System {
          * \brief перегрузка родительского метода, выводит информацию о папке
          */
         void information() const override;
+        /**
+         * \brief вывести содержимое папки
+         */
+        void showContentDir();
     };
 }
 

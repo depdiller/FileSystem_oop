@@ -1,6 +1,3 @@
 /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/CMakeFiles/FileSystem.dir
-/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/CMakeFiles/rebuild_cache.dir
-/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/CMakeFiles/edit_cache.dir
-/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/CMakeFiles/FileSystemLib.dir

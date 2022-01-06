@@ -6,6 +6,6 @@ int main() {
     FILE *associatedFile;
     associatedFile = fopen("C:\\disk.txt", "a+");
     if (associatedFile != nullptr) {
-        System::FileSystem system = System::FileSystem(associatedFile);
+        System::FileSystem system(associatedFile);
     }
 }

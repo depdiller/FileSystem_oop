@@ -1,53 +1,22 @@
-//
-// Created by stani on 30.11.2021.
-//
 #include "FileSystem.h"
 
 namespace System {
-    FileSystem::FileSystem(FILE *associatedFile, const std::string& username) : currUser(username), rootDir(1) {
+    FileSystem::FileSystem(FILE *associatedFile, const std::string& username) :  systemStruct() {
         if (associatedFile != nullptr) {
+            systemStruct.emplace_back(1, 66);
             disk = associatedFile;
-            tableOfUsers.insert(User(std::string("root")));
-            currUser = *tableOfUsers.begin();
+            tableOfUsers.insert(User("root"));
+            if (username == "root")
+                currUser = tableOfUsers.begin();
+            else
+                currUser = tableOfUsers.insert(User(username)).first;
         }
         else
             throw std::invalid_argument("cannot associate with this file");
     }
 
-    // return to root-user or just exit the program
-    int FileSystem::exit() {
-        if (currUser.getUserId() == 1)
-            return 0;
-        else {
-            setCurrUser(*tableOfUsers.begin());
-            return 1;
-        }
-    }
-
-    void FileSystem::listUsers() {
-        for (const User& u : tableOfUsers)
-            std::cout << u.getName() << std::endl;
-    }
-
-    void FileSystem::whoami() {
-        std::cout << currUser.getName();
-    }
-
-    // creating new user or logging as an existing one
-    void FileSystem::login(const std::string& userName) {
-        for (const User& u : tableOfUsers) {
-            if (u == userName) {
-                currUser = u;
-                return;
-            }
-        }
-        User newUser = User(userName);
-        currUser = newUser;
-        this->addToTable(userName);
-    }
-
     void FileSystem::deleteFromTable(const std::string& username) {
-        if (currUser.getUserId() != tableOfUsers.begin()->getUserId())
+        if (currUser->getUserId() != tableOfUsers.begin()->getUserId())
             throw std::invalid_argument("user have no access for such operation");
         else if (username == "root")
             throw std::invalid_argument("cannot delete root user");
@@ -62,7 +31,7 @@ namespace System {
     }
 
     void FileSystem::addToTable(const std::string &username) {
-        if (currUser.getUserId() != tableOfUsers.begin()->getUserId())
+        if (currUser->getUserId() != tableOfUsers.begin()->getUserId())
             throw std::invalid_argument("user have no access for such operation");
         std::set<User>::iterator it;
         it = tableOfUsers.find(username);
@@ -74,11 +43,25 @@ namespace System {
         }
     }
 
-    void FileSystem::setCurrUser(const User &newUser) {
-        currUser = newUser;
+    FileSystem &FileSystem::login(const User &newUser) {
+        auto it = tableOfUsers.find(newUser.getName());
+        if (it == tableOfUsers.end())
+            it = tableOfUsers.insert(newUser).first;
+        currUser = it;
+        return *this;
     }
 
-    bool FileSystem::eccryptDecrypt(AbstractFile &file) {
+    FileSystem &FileSystem::login(const std::string& userName) {
+        auto it = tableOfUsers.find(userName);
+        if (it == tableOfUsers.end()) {
+            User newUser(userName);
+            it = tableOfUsers.insert(newUser).first;
+        }
+        currUser = it;
+        return *this;
+    }
+
+    bool FileSystem::encryptDecrypt(AbstractFile &file) {
         return false;
     }
 

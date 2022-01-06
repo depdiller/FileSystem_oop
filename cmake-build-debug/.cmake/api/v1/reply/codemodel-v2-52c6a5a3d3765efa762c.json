@@ -6,10 +6,6 @@
 			[
 				{
 					"build" : ".",
-					"childIndexes" : 
-					[
-						1
-					],
 					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
@@ -21,21 +17,6 @@
 					[
 						0
 					]
-				},
-				{
-					"build" : "FileSystemLib",
-					"jsonFile" : "directory-FileSystemLib-Debug-cdc30313e104b7bbbac8.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "3.20"
-					},
-					"parentIndex" : 0,
-					"projectIndex" : 0,
-					"source" : "FileSystemLib",
-					"targetIndexes" : 
-					[
-						1
-					]
 				}
 			],
 			"name" : "Debug",
@@ -44,14 +25,12 @@
 				{
 					"directoryIndexes" : 
 					[
-						0,
-						1
+						0
 					],
 					"name" : "FileSystem",
 					"targetIndexes" : 
 					[
-						0,
-						1
+						0
 					]
 				}
 			],
@@ -60,15 +39,8 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "FileSystem::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-FileSystem-Debug-70f9a8d8ec15593a763c.json",
+					"jsonFile" : "target-FileSystem-Debug-4454c520e5c29d65cb7c.json",
 					"name" : "FileSystem",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 1,
-					"id" : "FileSystemLib::@55a7cb299b1bfe980c87",
-					"jsonFile" : "target-FileSystemLib-Debug-9e9ffc59193812ae0812.json",
-					"name" : "FileSystemLib",
 					"projectIndex" : 0
 				}
 			]

@@ -14,19 +14,25 @@ namespace TemplateMap {
         // constructors
         Node() : parent(nullptr), left(nullptr), right(nullptr) {};
         Node(Key key, Value value, Node *parent);
+        ~Node() = default;;
         // getters
         Key getKey() const { return this->key; }
         const Value &getValue() const { return this->value; }
         Node<Key, Value> *getParent() const { return this->parent; }
         Node<Key, Value> *getLeft() const { return this->left; }
         Node<Key, Value> *getRight() const { return this->right; }
+        // setters
+        Node<Key, Value> &setParent(Node<Key, Value> *parent);
+        Node<Key, Value> &setLeft(Node<Key, Value> *left);
+        Node<Key, Value> &setRight(Node<Key, Value> *right);
         // methods for tree
         Node<Key, Value> *insert(Node<Key, Value> *head, Key key, Value value);
         Node<Key, Value> *search(Node<Key, Value> *ptrNode, Key key);
         Node<Key, Value> *min(Node<Key, Value> *ptrNode);
         Node<Key, Value> *max(Node<Key, Value> *ptrNode);
         Node<Key, Value> *next(Node<Key, Value> *ptrNode);
-        void deleteNode(Node<Key, Value> *ptrNode);
+        Node<Key, Value> *clone(Node<Key, Value> *node, Node<Key, Value> *parent);
+        void deleteNodeRecursion(Node<Key, Value> *ptrNode);
     };
 
     template<typename Key, typename Value>
@@ -91,10 +97,10 @@ namespace TemplateMap {
     }
 
     template<typename Key, typename Value>
-    void Node<Key, Value>::deleteNode(Node<Key, Value> *ptrNode) {
+    void Node<Key, Value>::deleteNodeRecursion(Node<Key, Value> *ptrNode) {
         if (ptrNode != nullptr) {
-            deleteNode(ptrNode->left);
-            deleteNode(ptrNode->right);
+            deleteNodeRecursion(ptrNode->left);
+            deleteNodeRecursion(ptrNode->right);
             delete ptrNode;
         }
     }
@@ -109,6 +115,35 @@ namespace TemplateMap {
             tmp = tmp->parent;
         }
         return tmp;
+    }
+
+    template<typename Key, typename Value>
+    Node<Key, Value> *Node<Key, Value>::clone(Node<Key, Value> *node, Node<Key, Value> *parent) {
+        if (node != nullptr) {
+            auto *point = new Node(node->getKey(), node->getValue(), parent);
+            point->left = this->clone(node->getLeft(), point);
+            point->right = this->clone(node->getRight(), point);
+            return point;
+        }
+        return nullptr;
+    }
+
+    template<typename Key, typename Value>
+    Node<Key, Value> &Node<Key, Value>::setParent(Node<Key, Value> *parent) {
+        this->parent = parent;
+        return *this;
+    }
+
+    template<typename Key, typename Value>
+    Node<Key, Value> &Node<Key, Value>::setLeft(Node<Key, Value> *left) {
+        this->left = left;
+        return *this;
+    }
+
+    template<typename Key, typename Value>
+    Node<Key, Value> &Node<Key, Value>::setRight(Node<Key, Value> *right) {
+        this->right = right;
+        return *this;
     }
 }
 

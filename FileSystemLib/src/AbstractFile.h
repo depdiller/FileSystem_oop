@@ -24,7 +24,7 @@ namespace System {
      * */
     class AbstractFile {
     protected:
-        size_t ownerId; ///< идентификатор пользователя
+        unsigned int ownerId; ///< идентификатор пользователя
         size_t size; ///< размер файла в байтах
         Permissions uoPermissions; ///< права доступа для user & others
     public:
@@ -35,7 +35,8 @@ namespace System {
          * @param uoPermissions права доступа для user & others
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
-        explicit AbstractFile(size_t ownerId, unsigned int uoPermissions = 66);
+        AbstractFile(unsigned int ownerId, unsigned int uoPermissions = 66);
+        virtual ~AbstractFile();
         /**
          * \brief сеттер, устанавливающий новые права доступа
          *
@@ -81,7 +82,7 @@ namespace System {
          * \throw invalid_argument в случае неверной операции (не rwx)
          * @return подтверждение или отказ к выполнению операции
          */
-        bool checkPermission(size_t currUserId, const std::string& parameter) const;
+        bool checkPermission(unsigned int currUserId, const std::string& parameter) const;
     };
 }
 /*TODO

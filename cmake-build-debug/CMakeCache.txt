@@ -293,6 +293,9 @@ FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 //Path to a library.
 FILESYSTEM_LIB:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a
 
+//Path to a library.
+FILE_SYSTEM:FILEPATH=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a
+
 //Value Computed by CMake
 FileSystem_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug
 
@@ -381,6 +384,9 @@ gtest_hide_internal_symbols:BOOL=OFF
 
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;gtest;
+
+//Path to a library.
+libmapTemplate.a:FILEPATH=libmapTemplate.a-NOTFOUND
 
 //Value Computed by CMake
 mapLib_BINARY_DIR:STATIC=/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/map
@@ -520,7 +526,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=2
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

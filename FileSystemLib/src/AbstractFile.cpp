@@ -7,7 +7,7 @@
 #include <iostream>
 
 namespace System {
-    AbstractFile::AbstractFile(size_t ownerId, unsigned int uoPermissions) : uoPermissions(uoPermissions) {
+    AbstractFile::AbstractFile(unsigned int ownerId, unsigned int uoPermissions) : uoPermissions(uoPermissions) {
         this->ownerId = ownerId;
         size = 0;
     }
@@ -24,9 +24,9 @@ namespace System {
         return *this;
     }
 
-    bool AbstractFile::checkPermission(size_t currUserId, const std::string &parameter) const {
+    bool AbstractFile::checkPermission(unsigned int currUserId, const std::string &parameter) const {
         bool userCheck = currUserId == this->ownerId;
-        if (parameter != "r" || parameter != "w" || parameter != "x") {
+        if (parameter != "r" || parameter != "w") {
             throw std::invalid_argument("invalid permission check");
         } else if (parameter == "r") {
             if (userCheck)
@@ -46,4 +46,6 @@ namespace System {
         }
         return false;
     }
+
+    AbstractFile::~AbstractFile() {};
 }

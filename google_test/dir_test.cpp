@@ -3,11 +3,8 @@
 #include "FileSystem.h"
 
 TEST(Constructors, TestHierarchy) {
-    FILE *associatedFile;
-    associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
-    System::FileSystem sys(associatedFile);
+    System::Dir dir(1, 66);
 
-    sys.getRootDir();
 }
 
 int main(int argc, char *argv[]) {

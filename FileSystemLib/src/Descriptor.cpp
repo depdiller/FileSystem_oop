@@ -1,17 +1,16 @@
-//
-// Created by stani on 06.12.2021.
-//
 #include "Descriptor.h"
+#include "File.h"
+
+#include <utility>
 
 namespace System {
-    Descriptor::Descriptor(std::string streamName, int indexInTable) {
-        this->streamName = streamName;
-        virtualAddress = standardOffset * indexInTable;
+    Descriptor::Descriptor(std::string streamName, unsigned int fileVirtualAdrs) : virtualAddress(fileVirtualAdrs){
+        this->streamName = std::move(streamName);
     }
 
     Descriptor::Descriptor(const std::string &streamName) {
         this->streamName = streamName;
-        virtualAddress = standardOffset;
+        virtualAddress = 0;
     }
 
     Descriptor &Descriptor::setStreamName(std::string newName) {

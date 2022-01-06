@@ -2,7 +2,8 @@
 #define MAPTEMPLATE_MAP_H
 
 #include "BinarySearchTree.h"
-#include "iostream"
+#include <iostream>
+#include <utility>
 
 namespace TemplateMap {
     template<typename Key, typename Value>
@@ -29,8 +30,8 @@ namespace TemplateMap {
     public:
         friend class MapIterator<Key, Value>;
         typedef MapIterator<Key, Value> iterator;
-//        typedef MapIterator<const Key, const Value> const_iterator;
         Map() : sizeOfTree(0) {};
+        ~Map() = default;;
 
 
         iterator begin() const;
@@ -39,10 +40,13 @@ namespace TemplateMap {
         int size() const { return sizeOfTree; }
         bool isEmpty() const;
         iterator insert(Key key, Value value);
-        iterator search(Key key);
+        iterator find(Key key);
+        iterator erase(iterator toDelete);
 
-        const Value &operator[](const Key &key) const;
-        const Value &operator[](Key &&key);
+        Value &operator[](const Key &key);
+        Value &operator[](Key &&key);
+        Map<Key, Value> &operator=(const Map &other);
+        Map<Key, Value> &operator=(Map &&other) noexcept;
     };
 
     // MapIterator
@@ -102,36 +106,67 @@ namespace TemplateMap {
 
     template<typename Key, typename Value>
     MapIterator<Key, Value> Map<Key, Value>::insert(Key key, Value value) {
-        if (tree.search(key) == end())
+        if (find(key) == end())
             ++sizeOfTree;
         return iterator(tree.insert(key, value));
     }
 
     template<typename Key, typename Value>
-    MapIterator<Key, Value> Map<Key, Value>::search(Key key) {
-        return iterator(tree.search(key));
+    MapIterator<Key, Value> Map<Key, Value>::find(Key key) {
+        return iterator(tree.find(key));
     }
 
     template<typename Key, typename Value>
-    const Value &Map<Key, Value>::operator[](const Key &key) const {
-        Map<Key, Value>::iterator tmp1 = tree.search(key);
-        if (tmp1 != end()) {
-            return tmp1.getCurrentNode()->getValue();
-        }
-        else {
-            throw std::invalid_argument("No such key.");
-        }
-    }
-
-    template<typename Key, typename Value>
-    const Value &Map<Key, Value>::operator[](Key &&key) {
-        Map<Key, Value>::iterator tmp1 = tree.search(key);
+    Value &Map<Key, Value>::operator[](const Key &key) {
+        Map<Key, Value>::iterator tmp1 = tree.find(key);
         if (tmp1 == end()) {
             Value v;
+            // copying key
             Map<Key, Value>::iterator tmp2 = insert(key, v);
-            return tmp2.getCurrentNode()->getValue();
+            return const_cast<Value &>(tmp2.getCurrentNode()->getValue());
         }
-        return tmp1.getCurrentNode()->getValue();
+        return const_cast<Value &>(tmp1.getCurrentNode()->getValue());
+    }
+
+    template<typename Key, typename Value>
+    Value &Map<Key, Value>::operator[](Key &&key) {
+        Map<Key, Value>::iterator tmp1 = tree.find(key);
+        if (tmp1 == end()) {
+            Value v;
+            // moving key
+            Map<Key, Value>::iterator tmp2 = insert(std::move(key), v);
+            return const_cast<Value &>(tmp2.getCurrentNode()->getValue());
+        }
+        return const_cast<Value &>(tmp1.getCurrentNode()->getValue());
+    }
+
+    template<typename Key, typename Value>
+    Map<Key, Value> &Map<Key, Value>::operator=(const Map &other) {
+        if (this != &other) {
+            this->tree = other.tree;
+            sizeOfTree = other.sizeOfTree;
+            return *this;
+        }
+        else
+            return *this;
+    }
+
+    template<typename Key, typename Value>
+    MapIterator<Key, Value> Map<Key, Value>::erase(iterator toDelete) {
+        if (toDelete != this->end())
+            --sizeOfTree;
+        return iterator(tree.erase(toDelete.getCurrentNode()));
+    }
+
+    template<typename Key, typename Value>
+    Map<Key, Value> &Map<Key, Value>::operator=(Map &&other) noexcept {
+        if (this != &other) {
+            this->tree = other.tree;
+            sizeOfTree = other.sizeOfTree;
+            other.sizeOfTree = 0;
+
+        }
+        return *this;
     }
 }
 

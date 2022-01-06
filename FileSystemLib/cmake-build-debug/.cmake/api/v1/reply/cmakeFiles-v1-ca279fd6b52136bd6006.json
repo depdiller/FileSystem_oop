@@ -150,8 +150,8 @@
 	"kind" : "cmakeFiles",
 	"paths" : 
 	{
-		"build" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/cmake-build-debug",
-		"source" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map"
+		"build" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug",
+		"source" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib"
 	},
 	"version" : 
 	{

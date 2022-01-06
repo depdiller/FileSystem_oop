@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include <cstdio>
-#include <vector>
+#include <list>
 #include <set>
 #include "User.h"
 #include "Dir.h"
@@ -30,9 +30,9 @@ namespace System {
     class FileSystem {
     private:
         FILE *disk; ///< ассоциированный файл-диск
-        Dir rootDir; ///< корневая директорий
+        std::list<Dir> systemStruct;
         std::set<User> tableOfUsers; ///< таблица пользователей файловой системы
-        User currUser; ///< текущий пользователь файловой системы
+        std::set<User>::iterator currUser; ///< текущий пользователь файловой системы
     public:
         /**
          * \brief стандартный конструктор
@@ -48,30 +48,23 @@ namespace System {
          * \brief геттер для текущего пользователя
          * @return константная ссылка на текущего пользователя
          */
-        const User &getCurrUser() const { return currUser; }
+        std::set<User>::iterator getCurrUser() const { return currUser; }
         /**
          * \brief геттер для корневой папки
          * @return константная ссылка на корневую директорию
          */
-        const Dir &getRootDir() const { return rootDir; }
+        const Dir &getRootDir() const { return systemStruct.front(); }
+        const std::set<User> &getTableOfUsers() const { return tableOfUsers; }
         /**
          * \brief войти в систему в качестве пользователя
          * @param userName имя пользователя
          */
-        void login(const std::string& userName);
+        FileSystem &login(const std::string& userName);
         /**
-         * \brief сеттер для текущего пользователя
+         * \brief перегрузка метода login
          * (принимает новый объект пользователя)
          */
-        void setCurrUser(const User&);
-        /**
-         * \brief перечислить пользователей из таблицы пользователей
-         */
-        void listUsers();
-        /**
-         * \brief имя текущего пользователя выводится на эркан
-         */
-        void whoami();
+        FileSystem &login(const User& newUser);
         /**
          * \brief удалить пользователя из таблицы пользователей
          * \throw invalid_argument нет доступа для этой операции
@@ -91,7 +84,7 @@ namespace System {
          * \throw invalid_argument нет прав для такой операции
          * @return успешность операции шифрования
          */
-        bool eccryptDecrypt(AbstractFile& file);
+        bool encryptDecrypt(AbstractFile& file);
         /**
          * \brief вывод статистики по файловой системе на экран
          */
@@ -102,11 +95,8 @@ namespace System {
          * @return есть или нет пользователя в таблице пользователей
          */
         bool isInTable(const std::string &username);
-        /**
-         * \brief возврат к пользователю-админу или выход из программы
-         * @return успешность операции
-         */
-        int exit();
+        // methods to control dirs and files
+
     };
 }
 

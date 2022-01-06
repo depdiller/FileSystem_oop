@@ -6,7 +6,6 @@ namespace System {
     User::User(const std::string& name) : name(name) {
         if (name == "root") {
             userId = 1;
-            this->name = name;
         }
         else {
             size_t id = std::hash<std::string>{}(name);

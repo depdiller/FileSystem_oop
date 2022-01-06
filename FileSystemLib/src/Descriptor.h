@@ -3,7 +3,9 @@
  * \brief Заголовочный файл класса Дексриптора потоков
  *
  * Данный абстрактный класс содержит общие поля и методы,
- * которые понадобятся в наследуемых от него классах: Файл и Директория
+ * которые понадобятся в наследуемых от него классах: Файл и Директория.
+ * Конструктор нового дескриптора вызывается из класса Файл при создании
+ * нового потока.
  * */
 #ifndef FILESYSTEM_DESCRIPTOR_H
 #define FILESYSTEM_DESCRIPTOR_H
@@ -11,7 +13,6 @@
 #include <cstdio>
 
 namespace System {
-    const unsigned int standardOffset = 1024; ///< стандартное смещение для потоков
     /**
      * \author Voronov Stanislav
      * \version 1.0
@@ -21,14 +22,12 @@ namespace System {
      *
      * Класс для описания характеристик потоков, ассоциированных с файлами
      * */
+    class File;
     class Descriptor {
     private:
         std::string streamName; ///< имя потока
         unsigned int virtualAddress; ///< виртуальный адрес потока
     public:
-        /* indexInTable чтобы адрес каждого n-ого потока смешался
-         * на n * 1024*/
-
         /**
          * \brief конструктор, использующий имя файла и индекс в таблице потоков
          *
@@ -36,7 +35,7 @@ namespace System {
          * @param indexInTable индекс в таблице потоков для разделения
          * файла на потоки по 1024 байта
          */
-        Descriptor(std::string streamName, int indexInTable);
+        Descriptor(std::string streamName, unsigned int fileVirtualAdrs);
         /**
          * \brief конструктор использующий только имя потока
          * (дефолтный конструктор)

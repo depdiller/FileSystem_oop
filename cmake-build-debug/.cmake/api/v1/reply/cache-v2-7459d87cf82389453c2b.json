@@ -971,7 +971,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "2"
+			"value" : "1"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -1514,6 +1514,18 @@
 			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/cmake-build-debug/FileSystemLib/libFileSystemLib.a"
 		},
 		{
+			"name" : "FILE_SYSTEM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/cmake-build-debug/libFileSystemLib.a"
+		},
+		{
 			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python",
 			"properties" : 
 			[
@@ -1968,6 +1980,18 @@
 			],
 			"type" : "STATIC",
 			"value" : "general;gtest;"
+		},
+		{
+			"name" : "libmapTemplate.a",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a library."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "libmapTemplate.a-NOTFOUND"
 		},
 		{
 			"name" : "mapLib_BINARY_DIR",
