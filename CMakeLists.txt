@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 project(FileSystem)
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 23)
 
 find_library(FILE_SYSTEM libFileSystemLib.a
         PATHS ./FileSystemLib/cmake-build-debug/)

@@ -11,6 +11,7 @@ FetchContent_Declare(
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
+
 find_library(FILESYSTEM_LIB libFileSystemLib.a
         PATHS ../FileSystemLib/cmake-build-debug/)
 #find_library(MAP_LIB libmapTemplate.a

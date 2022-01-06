@@ -1,7 +1,7 @@
 #include "File.h"
 #include "FileSystem.h"
 #include <algorithm>
-
+#include <iostream>
 #include <utility>
 
 namespace System {
@@ -64,10 +64,12 @@ namespace System {
             throw std::invalid_argument("stream is not attached to file");
     }
 
-    void File::information() const {
-        std::cout << this->ownerId << std::endl <<
-                  this->dateAndTime << std::endl <<
-                  this->size << std::endl << std::endl;
+    std::string File::information() const {
+        char buff[100];
+        snprintf(buff, sizeof(buff), "OwnerId: %d, last changes: %s, size: %zu",
+                 ownerId, this->dateAndTime.c_str(), size);
+        std::string buffAsStdStr = buff;
+        return buff;
     }
 
     std::string currentDateTime() {

@@ -1,3 +1,5 @@
 # ninja log v5
 0	24	1641463744160691664	CMakeFiles/mapTemplate.dir/src/BinarySearchTree.cpp.o	d5caeadd2ca96be
 24	44	1641463744182441000	libmapTemplate.a	cfaa369e1d87856b
+0	25	1641499569781169865	CMakeFiles/mapTemplate.dir/src/BinarySearchTree.cpp.o	d5caeadd2ca96be
+26	52	1641499569809799000	libmapTemplate.a	cfaa369e1d87856b

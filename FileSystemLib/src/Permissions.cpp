@@ -35,4 +35,11 @@ namespace System {
         this->uoPermissions[1] = rwx(oPermissions);
         return *this;
     }
+
+    Permissions &Permissions::operator=(const Permissions &other) {
+        if (this != &other) {
+            this->uoPermissions = other.uoPermissions;
+        }
+        return *this;
+    }
 }

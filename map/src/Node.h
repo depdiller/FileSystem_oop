@@ -29,8 +29,10 @@ namespace TemplateMap {
         Node<Key, Value> *insert(Node<Key, Value> *head, Key key, Value value);
         Node<Key, Value> *search(Node<Key, Value> *ptrNode, Key key);
         Node<Key, Value> *min(Node<Key, Value> *ptrNode);
+        const Node<Key, Value> *min(const Node<Key, Value> *ptrNode) const;
         Node<Key, Value> *max(Node<Key, Value> *ptrNode);
         Node<Key, Value> *next(Node<Key, Value> *ptrNode);
+        const Node<Key, Value> *next(const Node<Key, Value> *ptrNode) const;
         Node<Key, Value> *clone(Node<Key, Value> *node, Node<Key, Value> *parent);
         void deleteNodeRecursion(Node<Key, Value> *ptrNode);
     };
@@ -144,6 +146,26 @@ namespace TemplateMap {
     Node<Key, Value> &Node<Key, Value>::setRight(Node<Key, Value> *right) {
         this->right = right;
         return *this;
+    }
+
+    template<typename Key, typename Value>
+    const Node<Key, Value> *Node<Key, Value>::next(const Node<Key, Value> *ptrNode) const {
+        if (ptrNode->right != nullptr)
+            return min(const_cast<const Node<Key, Value>*>(ptrNode->right));
+        const Node<Key, Value>* tmp = ptrNode->parent;
+        while (tmp != nullptr && ptrNode == tmp->right) {
+            ptrNode = tmp;
+            tmp = tmp->parent;
+        }
+        return tmp;
+    }
+
+    template<typename Key, typename Value>
+    const Node<Key, Value> *Node<Key, Value>::min(const Node<Key, Value> *ptrNode) const {
+        while (ptrNode->left != nullptr) {
+            ptrNode = ptrNode->left;
+        }
+        return const_cast<const Node<Key, Value>*>(ptrNode);
     }
 }
 

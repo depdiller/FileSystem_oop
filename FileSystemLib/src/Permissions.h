@@ -73,6 +73,7 @@ namespace System {
          * @return массив из прав доступа для user & others
          */
         std::array<rwx, 2> getPermissions() const { return uoPermissions; }
+        Permissions &operator=(const Permissions &other);
     };
 }
 

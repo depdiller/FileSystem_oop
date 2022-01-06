@@ -1,13 +1,11 @@
 # ninja log v5
-2	648	1641463797348672590	CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o	b08703f04647f39d
+2	576	1641469318032171076	CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o	b08703f04647f39d
 1327	1338	1641415227350644000	lib/libgtest_maind.a	43ca529d8fa44cc5
 1302	1326	1641415227338635000	lib/libgtestd.a	49d0bf04b6f1a1e1
 513	583	1641460403166876628	permissions_test	a04d8dda70f19817
 1	426	1641415226435095067	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	38242b49a71f9d5f
 1	513	1641460403089333014	CMakeFiles/permissions_test.dir/permissions_test.cpp.o	3684474d01dc01bb
 1	1302	1641415227309500118	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	6d5d3579a20dabb8
-1	471	1641464231536283507	CMakeFiles/dir_test.dir/dir_test.cpp.o	18262e19931e346d
-2	426	1641467360384112781	CMakeFiles/dir_test.dir/dir_test.cpp.o	18262e19931e346d
-426	492	1641467360451715589	dir_test	afd76923c3e83b8d
-2	551	1641467370154402326	CMakeFiles/fileSystem_test.dir/fileSystem_test.cpp.o	b08703f04647f39d
-551	620	1641467370224980692	fileSystem_test	9534d90fbc49c963
+576	645	1641469318103155864	fileSystem_test	9534d90fbc49c963
+2	463	1641503100876147325	CMakeFiles/dir_test.dir/dir_test.cpp.o	18262e19931e346d
+463	515	1641503100929901672	dir_test	afd76923c3e83b8d

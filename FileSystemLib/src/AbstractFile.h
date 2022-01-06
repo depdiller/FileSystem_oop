@@ -56,7 +56,7 @@ namespace System {
          *
          * @return идентификатор пользователя
          */
-        size_t getOwner() const { return ownerId; }
+        unsigned int getOwner() const { return ownerId; }
         /**
          * \brief геттер для получения текущего размера объекта
          *
@@ -72,7 +72,7 @@ namespace System {
         /**
          * \brief виртуальный метод, выводящий доступную классу информацию об объекте
          */
-        virtual void information () const = 0;
+        virtual std::string information () const = 0;
 //        void edit();
         /**
          * \brief проверка прав доступа для взаимодействия с объектом

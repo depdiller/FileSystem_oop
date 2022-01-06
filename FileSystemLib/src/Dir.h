@@ -13,6 +13,7 @@
 #include <string>
 #include "Map.h"
 #include <map>
+#include <utility>
 
 namespace System {
     /**
@@ -24,39 +25,21 @@ namespace System {
      *
      * Класс для описания характеристик папок, лежащих на диске
      * */
-//    template<typename T, typename V>
-//    class pair {
-//    private:
-//        T first;
-//        V *second;
-//    public:
-//        pair();
-//        pair(T first, V second);
-//        bool operator==(const pair<T, V> &other);
-//        bool operator!=(const pair<T, V> &other);
-//        bool operator<(const pair<T, V> &other);
-//    };
-//    template<typename T, typename V>
-//    bool pair<T, V>::operator==(const pair<T, V> &other) {
-//        return first == other.first;
-//    }
-//    template<typename T, typename V>
-//    bool pair<T, V>::operator!=(const pair<T, V> &other) {
-//        return first != other.first;
-//    }
-//    template<typename T, typename V>
-//    bool pair<T, V>::operator<(const pair<T, V> &other) {
-//        return this->first < other.first;
-//    }
-//
-//    template<typename T, typename V>
-//    pair<T, V>::pair(T first, V second) {
-//        this->first = first;
-//        this->second = second;
-//    }
-//
-//    template<typename T, typename V>
-//    pair<T, V>::pair() = default;;
+    class Dir;
+    class FileId : public std::pair<std::string, Dir*> {
+    public:
+        FileId() {
+            first = std::string();
+            second = nullptr;
+        }
+        FileId(std::string name, Dir *parent) {
+            first = std::move(name);
+            second = parent;
+        }
+        bool operator<(const std::string &other) {
+            return this->first < other;
+        }
+    };
 
     class Dir : public AbstractFile {
     private:
@@ -69,8 +52,8 @@ namespace System {
          * могут быть как файлы, так и поддиректории
          */
 
-//        TemplateMap::Map<std::string, Dir*> tableOfDirs;
-        TemplateMap::Map<std::string, File*> tableOfFiles;
+        TemplateMap::Map<FileId, Dir*> tableOfDirs;
+        TemplateMap::Map<FileId, File*> tableOfFiles;
     public:
         /**
          * \brief стандартный конструктор
@@ -82,6 +65,12 @@ namespace System {
         Dir(unsigned int ownerId, unsigned int uoPermissions = 66);
         ~Dir() override = default;;
         Dir &operator=(const Dir &other);
+        Dir &operator=(Dir &&other) noexcept;
+
+        int getNumberOfSubdir() const { return tableOfDirs.size(); }
+        int getNumberOfFiles() const { return tableOfFiles.size(); }
+        const TemplateMap::Map<FileId, Dir*> &getTableOfDirs() const { return tableOfDirs; }
+        const TemplateMap::Map<FileId, File*> &getTableOfFiles() const { return tableOfFiles; }
         /**
          * \brief создать поддиректорию или файл в текущей папке
          *
@@ -92,6 +81,7 @@ namespace System {
          */
         void createFile(unsigned int currUserId, unsigned int fileVirtualAdr, const std::string& name);
         void createDir(unsigned int currUserId, const std::string& name);
+//        void createDir(const Dir &dir);
         /**
          * \brief скопировать файл или подкаталог
          */
@@ -109,7 +99,7 @@ namespace System {
         /**
          * \brief перегрузка родительского метода, выводит информацию о папке
          */
-        void information() const override;
+        std::string information() const override;
         /**
          * \brief вывести содержимое папки
          */
