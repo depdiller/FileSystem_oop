@@ -46,7 +46,10 @@ namespace System {
          * @param uoPermissions права доступа для user & others
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
-        File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions = 66);
+        File();
+        File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions = 66)
+        // нужно добавить копирование всех байт
+        File &operator=(const File& other);
         /**
          * \brief сеттер для даты и времени последнего изменения файла
          *

@@ -72,6 +72,17 @@ namespace System {
         return buff;
     }
 
+    File &File::operator=(const File &other) {
+        if (this != &other) {
+            this->uoPermissions = other.uoPermissions;
+            this->size = other.size;
+            this->ownerId = other.ownerId;
+        }
+        return *this;
+    }
+
+    File::File() : AbstractFile(), TableOfStreams(), dateAndTime() {}
+
     std::string currentDateTime() {
         time_t now = time(nullptr);
         struct tm tstruct{};

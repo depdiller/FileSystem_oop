@@ -48,5 +48,11 @@ namespace System {
             throw std::invalid_argument("invalid permission check");
     }
 
-    AbstractFile::~AbstractFile() {};
+    AbstractFile::~AbstractFile() {}
+
+    AbstractFile::AbstractFile() {
+        ownerId = 1;
+        uoPermissions = Permissions();
+        size = 0;
+    };
 }

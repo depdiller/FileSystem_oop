@@ -35,6 +35,7 @@ namespace System {
          * @param uoPermissions права доступа для user & others
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
+        AbstractFile();
         AbstractFile(unsigned int ownerId, unsigned int uoPermissions = 66);
         virtual ~AbstractFile();
         /**

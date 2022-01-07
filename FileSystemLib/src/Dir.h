@@ -85,7 +85,7 @@ namespace System {
         /**
          * \brief скопировать файл или подкаталог
          */
-        void copyFile(unsigned int currUserId, Dir &copyTo, const std::string& filename);
+        void copyFile(unsigned int currUserId, Dir &copyTo, File &file, const std::string& filename, unsigned int vAddress);
         void copyDir(unsigned int currUserId, Dir &copyTo, const std::string& dirname);
         /**
          * \brief переместить файл или подкаталог
