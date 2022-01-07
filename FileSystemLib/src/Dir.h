@@ -65,7 +65,7 @@ namespace System {
         Dir(unsigned int ownerId, unsigned int uoPermissions = 66);
         ~Dir() override = default;;
         Dir &operator=(const Dir &other);
-        Dir &operator=(Dir &&other) noexcept;
+//        Dir &operator=(Dir &&other);
 
         int getNumberOfSubdir() const { return tableOfDirs.size(); }
         int getNumberOfFiles() const { return tableOfFiles.size(); }
@@ -95,7 +95,8 @@ namespace System {
         /**
          * \brief удалить файл или подкатолог
          */
-        void deleteFile();
+        void deleteFile(unsigned int currUserId, const std::string &filename);
+        void deleteDir(unsigned int currUserId, const std::string &dirname);
         /**
          * \brief перегрузка родительского метода, выводит информацию о папке
          */
@@ -103,7 +104,9 @@ namespace System {
         /**
          * \brief вывести содержимое папки
          */
-        void showContentDir();
+         void recursiveDelete();
+         Dir *subdir(const std::string &name);
+         File *fileIn(const std::string &name);
     };
 }
 

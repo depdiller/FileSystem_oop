@@ -39,18 +39,18 @@ TEST(Subdirs, NestedDirs) {
 }
 
 using namespace  System;
-TEST(MoveAndCopy, CopyMoveMethods) {
+TEST(Move, MoveMethods) {
     Dir dir(1, 44);
     EXPECT_ANY_THROW(dir.createDir(1, "usr"));
     dir.setPermissions(66);
     dir.createDir(1, "usr");
     dir.createDir(1, "lib");
     ASSERT_EQ(dir.information(), "Dirs in directory: lib usr \tOwnerId: 1, size: 0");
-    auto usr = dir.getTableOfDirs().find(FileId("usr", &dir))->getValue();
+    auto usr = dir.subdir("usr");
     usr->createDir(1, "arkmagrive");
     ASSERT_EQ(usr->information(), "Dirs in directory: arkmagrive \tOwnerId: 1, size: 0");
     ASSERT_EQ(dir.information(), "Dirs in directory: lib usr \tOwnerId: 1, size: 0");
-    auto arkmagrive = usr->getTableOfDirs().find(FileId("arkmagrive", usr))->getValue();
+    auto arkmagrive = usr->subdir("arkmagrive");
     arkmagrive->createFile(1, 223, "arkmagrive_info");
     ASSERT_EQ(arkmagrive->information(), "Files in directory: arkmagrive_info \tOwnerId: 1, size: 0");
 
@@ -61,8 +61,28 @@ TEST(MoveAndCopy, CopyMoveMethods) {
     usr->moveDir(1, dir, "arkmagrive", "arkmagrive_moved");
     ASSERT_EQ(dir.information(), "Dirs in directory: arkmagrive_moved lib usr \tOwnerId: 1, size: 0");
     ASSERT_EQ(usr->information(), "OwnerId: 1, size: 0");
-    auto arkmagrive_moved = dir.getTableOfDirs().find(FileId("arkmgarive_moved", &dir))->getValue();
-    ASSERT_EQ(arkmagrive_moved->information(), "Files in directory: arkmagrive_info \tOwnerId: 1, size 0");
+    auto arkmagrive_moved = dir.subdir("arkmagrive_moved");
+    ASSERT_EQ(arkmagrive_moved->information(), "Files in directory: arkmagrive_info \tOwnerId: 1, size: 0");
+
+    usr->createFile(1, 234, "file1");
+    ASSERT_EQ(usr->information(), "Files in directory: file1 \tOwnerId: 1, size: 0");
+    usr->moveFile(1, dir, "file1", "file1");
+    ASSERT_EQ(usr->information(), "OwnerId: 1, size: 0");
+    ASSERT_EQ(dir.information(), "Dirs in directory: arkmagrive_moved lib usr \tFiles in directory: file1 \tOwnerId: 1, size: 0");
+}
+
+TEST(Delete, DeleteNestedDirs) {
+    Dir dir(1, 77);
+    dir.createDir(1, "dir1");
+    auto dir1 = dir.subdir("dir1");
+    dir1->createDir(1, "dir2");
+    ASSERT_EQ(dir.information(), "Dirs in directory: dir1 \tOwnerId: 1, size: 0");
+    dir.deleteDir(1, "dir1");
+    ASSERT_EQ(dir.information(), "OwnerId: 1, size: 0");
+}
+
+TEST(Copy, CopyMethods) {
+
 }
 
 int main(int argc, char *argv[]) {

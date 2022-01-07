@@ -154,12 +154,67 @@ namespace System {
         return final;
     }
 
-    Dir &Dir::operator=(Dir &&other)  noexcept {
-        if (this != &other) {
-            this->tableOfFiles = other.tableOfFiles;
-            this->tableOfDirs = other.tableOfDirs;
-            this->uoPermissions = other.uoPermissions;
+    void Dir::deleteFile(unsigned int currUserId, const std::string &filename) {
+        auto itThisFile = tableOfFiles.find(FileId(filename, this));
+        if (itThisFile != tableOfFiles.end()) {
+            if (checkPermission(currUserId, "x")) {
+                tableOfFiles.erase(itThisFile);
+                // erase data from system
+            }
+            else {
+                throw std::invalid_argument("No permission to delete");
+            }
         }
-        return *this;
+        else {
+            throw std::invalid_argument("There is no such file in dir");
+        }
+    }
+
+    void Dir::deleteDir(unsigned int currUserId, const std::string &dirname) {
+        auto itThisDir = tableOfDirs.find(FileId(dirname, this));
+        if (itThisDir != tableOfDirs.end()) {
+            if (checkPermission(currUserId, "x")) {
+                itThisDir->getValue()->recursiveDelete();
+                tableOfDirs.erase(itThisDir);
+            }
+            else {
+                throw std::invalid_argument("No permission to delete");
+            }
+        }
+        else {
+            throw std::invalid_argument("There is no such file in dir");
+        }
+    }
+
+    void Dir::recursiveDelete() {
+        for (auto it = tableOfFiles.begin(); it != tableOfFiles.end(); ++it) {
+            tableOfFiles.erase(it);
+        }
+        for (auto &dirId : this->tableOfDirs) {
+            dirId.getValue()->recursiveDelete();
+        }
+        for (auto it = tableOfDirs.begin(); it != tableOfDirs.end(); ++it) {
+            tableOfDirs.erase(it);
+        }
+    }
+
+    Dir *Dir::subdir(const std::string &name) {
+        auto it = tableOfDirs.find(FileId(name, this));
+        if (it != tableOfDirs.end()) {
+            return it->getValue();
+        }
+        else {
+            throw std::invalid_argument("No such dir");
+        }
+    }
+
+    File *Dir::fileIn(const std::string &name) {
+        auto it = tableOfFiles.find(FileId(name, this));
+        if (it != tableOfFiles.end()) {
+            return it->getValue();
+        }
+        else {
+            throw std::invalid_argument("No such file");
+        }
     }
 }

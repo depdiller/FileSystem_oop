@@ -35,12 +35,18 @@ namespace TemplateMap {
 
     template<typename Key, typename Value>
     Node<Key, Value> *BinarySearchTree<Key, Value>::min() const {
-        return root->min(root);
+        if (this->root != nullptr)
+            return root->min(root);
+        else
+            return nullptr;
     }
 
     template<typename Key, typename Value>
     Node<Key, Value> *BinarySearchTree<Key, Value>::max() const {
-        return root->max(root);
+        if (this->root != nullptr)
+            return root->max(root);
+        else
+            return nullptr;
     }
 
     template<typename Key, typename Value>
