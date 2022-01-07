@@ -8,8 +8,13 @@ namespace System {
 
     void Dir::createFile(unsigned int currUserId, unsigned int fileVirtualAdr, const std::string &name) {
         if (tableOfFiles.find(FileId(name, this)) == tableOfFiles.end()) {
-            File *newFile = new File(fileVirtualAdr, currUserId, 66);
-            tableOfFiles.insert(FileId(name, this), newFile);
+            if (checkPermission(currUserId, "w")) {
+                File *newFile = new File(fileVirtualAdr, currUserId, 66);
+                tableOfFiles.insert(FileId(name, this), newFile);
+            }
+            else {
+                throw std::invalid_argument("No permission");
+            }
         }
         else
             throw std::invalid_argument("file with such name already exists");
@@ -17,40 +22,46 @@ namespace System {
 
     void Dir::createDir(unsigned int currUserId, const std::string& name) {
         if (tableOfDirs.find(FileId(name, this)) == tableOfDirs.end()) {
-            Dir *newDir = new Dir(currUserId);
-            tableOfDirs.insert(FileId(name, this), newDir);
+            if (checkPermission(currUserId, "w")) {
+                Dir *newDir = new Dir(currUserId);
+                tableOfDirs.insert(FileId(name, this), newDir);
+            }
+            else {
+                throw std::invalid_argument("No permission");
+            }
         }
         else
             throw std::invalid_argument("dir with such name already exists");
     }
-    // копируем file под именем filename в папку toDir. Виртуальный адрес нового файла - vAddress
-    void Dir::copyFile(unsigned int currUserId, Dir &toDir, File &file, const std::string& filename, unsigned int vAddress) {
-        // если файл с таким именем внутри toDir
-        auto it = toDir.tableOfFiles.find(FileId(filename, &toDir));
-        if (it == toDir.tableOfFiles.end()) {
-            if (toDir.checkPermission(currUserId, "x")) {
-                // создали новый файл
-                File *newFile = new File();
-                // скопировали содержимое файла
-                *newFile = file;
-                // вставили новый файл
-                toDir.tableOfFiles.insert(FileId(filename, &toDir), newFile);
-            }
-            else
-                throw std::invalid_argument("No permission to copy");
-        }
-        else
-            throw std::invalid_argument("There is already file with such name");
-    }
 
-    // было бы удобно писать, dir.copyTo(antotherDir&)
+    // скопировать файл filenameThis в папку toDir с новым именем newFilename
+    void Dir::copyFile(unsigned int currUserId, Dir &toDir, const std::string& filenameThis,const std::string& newFilename) {
+        auto itThisFile = tableOfFiles.find(FileId(filenameThis, this));
+        auto itToDirFile = toDir.tableOfFiles.find(FileId(newFilename, &toDir));
+        if (itThisFile != tableOfFiles.end() && itToDirFile == toDir.tableOfFiles.end()) {
+            if (checkPermission(currUserId, "x") && toDir.checkPermission(currUserId, "x")) {
+                // создаем новый пустой файл
+                File *newFile = new File();
+                // копируем в него данные из старого (будет что-то по типу жесткой ссылки, тк виртуальный адрес = const
+                *newFile = *itThisFile->getValue();
+                // вставляем файл в папку
+                toDir.tableOfFiles.insert(FileId(newFilename, &toDir), newFile);
+            }
+            else {
+                throw std::invalid_argument("No permission to copy file");
+            }
+        }
+        else {
+            throw std::invalid_argument("No such file in current dir or in dir copy to have file with such name");
+        }
+    }
 
     // копируем текущую папку в toDir под названием dirname
     void Dir::copyDir(unsigned int currUserId, Dir &toDir, const std::string& dirname) {
         // если в toDir уже есть папка с таким именем
         auto it = this->tableOfDirs.find(FileId(dirname, &toDir));
         if (it == toDir.tableOfDirs.end()) {
-            if (checkPermission(currUserId, "x")) {
+            if (checkPermission(currUserId, "x") && toDir.checkPermission(currUserId, "x")) {
                 // создали новую папку
                 Dir *newDir = new Dir(currUserId, 66);
                 // скопировали в нее все из текущей
@@ -58,37 +69,52 @@ namespace System {
                 // вставили новую папку в toDir
                 toDir.tableOfDirs.insert(FileId(dirname, &toDir), newDir);
             } else
-                throw std::invalid_argument("No permission to copy");
+                throw std::invalid_argument("No permission to copy dir");
         } else
             throw std::invalid_argument("There is already dir with such name");
     }
 
-    void Dir::moveFile(unsigned int currUserId, Dir &toDir, File &file, const std::string &filename) {
-        auto it = this->tableOfFiles.find(FileId(filename, this));
-        if (it != tableOfFiles.end()) {
-            if (checkPermission(currUserId, "x")) {
-                toDir.tableOfFiles.insert(FileId(filename, this), it->getValue());
-                tableOfFiles.erase(it);
+    // найти файл в текущей папке и переместить его в toDir
+    void Dir::moveFile(unsigned int currUserId, Dir &toDir, const std::string &filenameThis, const std::string &filenameNew) {
+        auto itThisFile = tableOfFiles.find(FileId(filenameThis, this));
+        auto itToDirFile = toDir.tableOfFiles.find(FileId(filenameNew, &toDir));
+        if (itThisFile != tableOfFiles.end() && itToDirFile == toDir.tableOfFiles.end()) {
+            if (checkPermission(currUserId, "x") && toDir.checkPermission(currUserId, "x")) {
+                // создаем новый пустой файл
+                File *newFile = new File();
+                // копируем в него данные из старого (будет что-то по типу жесткой ссылки, тк виртуальный адрес = const
+                *newFile = *itThisFile->getValue();
+                // вставляем файл в папку
+                toDir.tableOfFiles.insert(FileId(filenameNew, &toDir), newFile);
+                // удаляем файл из текущей дериктории
+                tableOfFiles.erase(itThisFile);
             }
-            else
-                throw std::invalid_argument("do not have permission for such operation");
+            else {
+                throw std::invalid_argument("No permission to move file");
+            }
         }
-        else
-            throw std::invalid_argument("File not found");
+        else {
+            throw std::invalid_argument("No such file in current dir or in dir copy to have file with such name");
+        }
     }
 
-    void Dir::moveDir(unsigned int currUserId, Dir &toDir, const std::string &dirname) {
-        auto it = this->tableOfDirs.find(FileId(dirname, this));
-        if (it != tableOfDirs.end()) {
-            if (checkPermission(currUserId, "x")) {
-                toDir.tableOfDirs.insert(FileId(dirname, this), it->getValue());
-                tableOfDirs.erase(it);
-            }
-            else
-                throw std::invalid_argument("do not have permission for such operation");
-        }
-        else
-            throw std::invalid_argument("Dir not found");
+    void Dir::moveDir(unsigned int currUserId, Dir &toDir, const std::string &dirnameThis, const std::string &dirnameNew) {
+        auto itThisDir = tableOfDirs.find(FileId(dirnameThis, this));
+        auto itToDirDir = toDir.tableOfDirs.find(FileId(dirnameNew, &toDir));
+        if (itThisDir != tableOfDirs.end() && itToDirDir == toDir.tableOfDirs.end()) {
+            if (checkPermission(currUserId, "x") && toDir.checkPermission(currUserId, "x")) {
+                // создали новую папку
+                Dir *newDir = new Dir(currUserId, 66);
+                // скопировали в нее все из текущей
+                *newDir = *itThisDir->getValue();
+                // вставили новую папку в toDir
+                toDir.tableOfDirs.insert(FileId(dirnameNew, &toDir), newDir);
+                // удалить папку из папки, в которой была this
+                this->tableOfDirs.erase(itThisDir);
+            } else
+                throw std::invalid_argument("No permission to move dir");
+        } else
+            throw std::invalid_argument("No such dir in current dir or in dir copy to have dir with such name");
     }
 
     Dir &Dir::operator=(const Dir &other) {
@@ -127,6 +153,7 @@ namespace System {
         final.append(buff);
         return final;
     }
+
     Dir &Dir::operator=(Dir &&other)  noexcept {
         if (this != &other) {
             this->tableOfFiles = other.tableOfFiles;

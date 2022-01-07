@@ -43,6 +43,7 @@ namespace System {
          * @param streamName имя потока
          */
         Descriptor(const std::string& streamName);
+        Descriptor &setVirtualAddress(unsigned int newAddress);
         /**
          * \brief геттер для имени потока
          *
@@ -71,6 +72,9 @@ namespace System {
          * и строку с именем
          */
         bool operator<(const std::string&) const;
+        bool operator<(std::string &&otherName) const {
+            return this->streamName < otherName;
+        }
         /**
          * \brief перегруженный оператор равенства через объект класса
          * и строку с именем

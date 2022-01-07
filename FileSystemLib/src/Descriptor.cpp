@@ -33,5 +33,10 @@ namespace System {
     bool Descriptor::operator!=(const std::string &name) const {
         return this->streamName != name;
     }
+
+    Descriptor &Descriptor::setVirtualAddress(unsigned int newAddress) {
+        this->virtualAddress = newAddress;
+        return *this;
+    }
 }
 

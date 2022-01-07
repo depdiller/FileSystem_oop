@@ -20,6 +20,7 @@ TEST(Subdirs, NestedDirs) {
     ASSERT_NE(dir.getTableOfDirs().find(System::FileId("dir1", &dir)), dir.getTableOfDirs().end());
     ASSERT_EQ(dir.getTableOfDirs().find(System::FileId("dir2", &dir)), dir.getTableOfDirs().end());
     dir.createDir(1, "dir2");
+    EXPECT_ANY_THROW(dir.createDir(1, "dir2"));
     ASSERT_EQ(dir.getNumberOfSubdir(), 2);
     ASSERT_NE(dir.getTableOfDirs().find(System::FileId("dir1", &dir)), dir.getTableOfDirs().end());
     ASSERT_NE(dir.getTableOfDirs().find(System::FileId("dir2", &dir)), dir.getTableOfDirs().end());
@@ -35,10 +36,33 @@ TEST(Subdirs, NestedDirs) {
 
     ASSERT_EQ(dir.information(), "Dirs in directory: dir1 dir2 \tFiles in directory: file1 file2 \t"
                                  "OwnerId: 1, size: 0");
+}
 
-    System::Dir &dir2 = (System::Dir &) dir.getTableOfDirs().find(System::FileId("dir2", &dir))->getValue();
-    dir.moveDir(1, dir2, "dir1");
-    ASSERT_EQ(dir.getTableOfDirs().find(System::FileId("dir2", &dir)), dir.getTableOfDirs().end());
+using namespace  System;
+TEST(MoveAndCopy, CopyMoveMethods) {
+    Dir dir(1, 44);
+    EXPECT_ANY_THROW(dir.createDir(1, "usr"));
+    dir.setPermissions(66);
+    dir.createDir(1, "usr");
+    dir.createDir(1, "lib");
+    ASSERT_EQ(dir.information(), "Dirs in directory: lib usr \tOwnerId: 1, size: 0");
+    auto usr = dir.getTableOfDirs().find(FileId("usr", &dir))->getValue();
+    usr->createDir(1, "arkmagrive");
+    ASSERT_EQ(usr->information(), "Dirs in directory: arkmagrive \tOwnerId: 1, size: 0");
+    ASSERT_EQ(dir.information(), "Dirs in directory: lib usr \tOwnerId: 1, size: 0");
+    auto arkmagrive = usr->getTableOfDirs().find(FileId("arkmagrive", usr))->getValue();
+    arkmagrive->createFile(1, 223, "arkmagrive_info");
+    ASSERT_EQ(arkmagrive->information(), "Files in directory: arkmagrive_info \tOwnerId: 1, size: 0");
+
+    EXPECT_ANY_THROW(usr->moveDir(1, dir, "arkmagrive", "arkmagrive_moved"));
+    arkmagrive->setPermissions(77);
+    dir.setPermissions(77);
+    usr->setPermissions(77);
+    usr->moveDir(1, dir, "arkmagrive", "arkmagrive_moved");
+    ASSERT_EQ(dir.information(), "Dirs in directory: arkmagrive_moved lib usr \tOwnerId: 1, size: 0");
+    ASSERT_EQ(usr->information(), "OwnerId: 1, size: 0");
+    auto arkmagrive_moved = dir.getTableOfDirs().find(FileId("arkmgarive_moved", &dir))->getValue();
+    ASSERT_EQ(arkmagrive_moved->information(), "Files in directory: arkmagrive_info \tOwnerId: 1, size 0");
 }
 
 int main(int argc, char *argv[]) {

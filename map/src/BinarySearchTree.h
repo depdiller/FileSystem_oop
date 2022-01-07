@@ -69,7 +69,12 @@ namespace TemplateMap {
         if (this != &other) {
             if (this->root != nullptr)
                 root->deleteNodeRecursion(root);
-            this->root = this->root->clone(other.root, other.root->getParent());
+            if (other.root != nullptr) {
+                this->root = this->root->clone(other.root, other.root->getParent());
+            }
+            else {
+                this->root = nullptr;
+            }
             return *this;
         }
         else

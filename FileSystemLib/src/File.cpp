@@ -5,9 +5,9 @@
 #include <utility>
 
 namespace System {
-    File::File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions) : AbstractFile(ownerId,
+    File::File(unsigned int fileVirtualAddress, unsigned int ownerId, unsigned int uoPermissions) : AbstractFile(ownerId,
                                                                                                         uoPermissions) {
-        TableOfStreams.insert(Descriptor("MAIN", fileVirtualAdrs));
+        TableOfStreams.insert(Descriptor("MAIN", fileVirtualAddress));
     }
 
     File &File::setDateAndTime(std::string updateTime) {
@@ -82,6 +82,12 @@ namespace System {
     }
 
     File::File() : AbstractFile(), TableOfStreams(), dateAndTime() {}
+
+    File &File::setVritualAddress(unsigned int newAddress) {
+//        auto it = TableOfStreams.find("MAIN");
+//        it->setVirtualAddress(newAddress);
+        return *this;
+    }
 
     std::string currentDateTime() {
         time_t now = time(nullptr);

@@ -85,13 +85,13 @@ namespace System {
         /**
          * \brief скопировать файл или подкаталог
          */
-        void copyFile(unsigned int currUserId, Dir &copyTo, File &file, const std::string& filename, unsigned int vAddress);
+        void copyFile(unsigned int currUserId, Dir &copyTo, const std::string& filename, const std::string& newFilename);
         void copyDir(unsigned int currUserId, Dir &copyTo, const std::string& dirname);
         /**
          * \brief переместить файл или подкаталог
          */
-        void moveFile(unsigned int currUserId, Dir &toDir, const std::string& filename);
-        void moveDir(unsigned int currUserId, Dir &toDir, const std::string& dirname);
+        void moveFile(unsigned int currUserId, Dir &toDir, const std::string &filenameThis, const std::string& filename);
+        void moveDir(unsigned int currUserId, Dir &toDir, const std::string& dirnameThis, const std::string &dirnameNew);
         /**
          * \brief удалить файл или подкатолог
          */

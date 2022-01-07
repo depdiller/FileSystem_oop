@@ -38,6 +38,7 @@ namespace System {
     protected:
         std::string dateAndTime; ///< дата и время последнего изменения файла
         std::set<Descriptor> TableOfStreams; ///< таблица ассоциированных с файлом потоков
+
     public:
         /**
          * \brief стандартный конструктор
@@ -47,7 +48,7 @@ namespace System {
          * \throw invalid_argument в случае некорректного параметра прав доступа
          */
         File();
-        File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions = 66)
+        File(unsigned int fileVirtualAdrs, unsigned int ownerId, unsigned int uoPermissions = 66);
         // нужно добавить копирование всех байт
         File &operator=(const File& other);
         /**
@@ -56,6 +57,7 @@ namespace System {
          * @param updateTime новые дата и время
          * @return ссылка на измененный объект
          */
+        File &setVritualAddress(unsigned int newAddress);
         File &setDateAndTime(std::string updateTime);
         /**
          * \brief геттер для даты и времени последних изменений
