@@ -4,22 +4,20 @@
 #include "Permissions.h"
 #include "User.h"
 
+using namespace System;
 TEST(Constructor, DefaultConstructor) {
     FILE *associatedFile;
     associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
 
-    System::FileSystem sys(associatedFile);
-    ASSERT_NE(sys.getDisk(), nullptr);
-    ASSERT_EQ(sys.getCurrUser()->getUserId(), 1);
+    FileSystem sys(associatedFile);
     ASSERT_EQ(sys.getCurrUser()->getName(), "root");
-    ASSERT_EQ(sys.getRootDir().getOwner(), 1);
 
-    System::FileSystem sys2(associatedFile, "arkmagrive");
-    ASSERT_NE(sys2.getDisk(), nullptr);
-    ASSERT_EQ(sys2.getCurrUser()->getName(), "arkmagrive");
-    std::string root("root");
-    ASSERT_NE(sys2.getTableOfUsers().find(root), sys2.getTableOfUsers().end());
-    ASSERT_EQ(sys2.getRootDir().getOwner(), 1);
+    FILE *associatedFile1;
+    associatedFile1 = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
+    FileSystem sys1(associatedFile1, "arkmagrive");
+    ASSERT_EQ(sys1.getCurrUser()->getName(), "arkmagrive");
+    ASSERT_NE(sys1.getTableOfUsers().find(std::string("root")), sys.getTableOfUsers().end());
+    ASSERT_NE(sys1.getTableOfUsers().find(std::string("arkmagrive")), sys.getTableOfUsers().end());
 }
 
 TEST(Setters, AllSetters) {
@@ -44,7 +42,7 @@ TEST(Methods, AdditionalMethods) {
     sys.addToTable("login2");
     ASSERT_EQ(sys.isInTable("login1"), true);
     ASSERT_EQ(sys.isInTable("login2"), true);
-    sys.deleteFromTable("login2");
+    sys.deleteUserFromTable("login2");
     ASSERT_EQ(sys.isInTable("login2"), false);
 }
 
@@ -54,8 +52,26 @@ TEST(Exceptions, AllExceptions) {
     EXPECT_ANY_THROW(System::FileSystem sys(associatedFile));
     associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
     System::FileSystem sys(associatedFile);
-    EXPECT_ANY_THROW(sys.deleteFromTable("root"));
+    EXPECT_ANY_THROW(sys.deleteUserFromTable("root"));
     EXPECT_ANY_THROW(sys.addToTable("root"));
+}
+
+TEST(Dirs, DirsMethods) {
+    FILE *associatedFile;
+    associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
+    FileSystem sys(associatedFile);
+
+    sys.createDir("usr");
+    sys.createDir("lib");
+    ASSERT_EQ(sys.getRootDir().ls(), "lib usr ");
+    sys.setCurrDir("/usr");
+    sys.createDir("arkmagrive");
+    sys.createDir("ivan");
+    sys.setCurrDir("/usr/ivan");
+    sys.createFile("INFO_IVAN", 143);
+    sys.setCurrDir("/");
+    sys.createDir("tmp");
+    std::cout << sys.infoSystem();
 }
 
 int main(int argc, char *argv[]) {

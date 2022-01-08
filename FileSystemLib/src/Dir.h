@@ -107,6 +107,7 @@ namespace System {
          void recursiveDelete();
          Dir *subdir(const std::string &name);
          File *fileIn(const std::string &name);
+         std::string ls() const;
     };
 }
 

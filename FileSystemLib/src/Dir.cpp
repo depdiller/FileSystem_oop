@@ -217,4 +217,24 @@ namespace System {
             throw std::invalid_argument("No such file");
         }
     }
+
+    std::string Dir::ls() const {
+        char dirs[100];
+        char files[100];
+        std::string final;
+        if (tableOfDirs.size() != 0) {
+            for (auto const &dir: tableOfDirs) {
+                snprintf(dirs, sizeof(dirs), "%s ", dir.getKey().first.c_str());
+                final.append(dirs);
+            }
+        }
+        if (tableOfFiles.size() != 0) {
+            final.append("Files in directory: ");
+            for (auto const &file: tableOfFiles) {
+                snprintf(files, sizeof(files), "%s ", file.getKey().first.c_str());
+                final.append(files);
+            }
+        }
+        return final;
+    }
 }
