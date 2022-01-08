@@ -15,7 +15,7 @@ namespace System {
             throw std::invalid_argument("cannot associate with this file");
     }
 
-    void FileSystem::deleteFromTable(const std::string& username) {
+    void FileSystem::deleteUserFromTable(const std::string& username) {
         if (currUser->getUserId() != tableOfUsers.begin()->getUserId())
             throw std::invalid_argument("user have no access for such operation");
         else if (username == "root")

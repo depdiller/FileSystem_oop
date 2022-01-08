@@ -1,17 +1,10 @@
 # ninja log v5
-2	1585	1641594112695274150	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
+2	794	1641627691491657176	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
 3	587	1641560458814817740	CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o	55a9a94684317bb5
 1	248	1641560528128811419	CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o	c81ef73b7d2718bb
-4	1608	1641594112717816188	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
-3	1692	1641594112798305876	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
-4	1773	1641594112877322941	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
-3	1751	1641594112844776118	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
-3	1756	1641594112862295846	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-1773	1834	1641594112948957000	libFileSystemLib.a	b6e2e545325bd601
-1	927	1641595038499874925	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
-3	968	1641595038543557625	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
-2	1000	1641595038576523769	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
-2	1026	1641595038592434296	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
-2	1103	1641595038677648385	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-3	1115	1641595038691357227	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
-1115	1164	1641595038744616000	libFileSystemLib.a	b6e2e545325bd601
+3	871	1641627691569346856	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
+2	912	1641627691610320501	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
+3	1018	1641627691717505371	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
+2	919	1641627691617987914	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
+2	978	1641627691677287785	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
+1018	1050	1641627691752792000	libFileSystemLib.a	b6e2e545325bd601

@@ -71,7 +71,7 @@ namespace System {
          * \throw invalid_argument нет не такого пользователя в таблице
          * @param username имя пользователя
          */
-        void deleteFromTable(const std::string& username);
+        void deleteUserFromTable(const std::string& username);
         /**
          * \brief добавить пользователя в таблицу
          * @param username имя пользователя

@@ -82,7 +82,26 @@ TEST(Delete, DeleteNestedDirs) {
 }
 
 TEST(Copy, CopyMethods) {
+    Dir dir(1, 77);
+    dir.createDir(1, "dir1");
+    dir.createDir(1, "dir2");
+    dir.createFile(1, 34, "file1");
+    auto dir1 = dir.subdir("dir1");
+    dir1->createDir(1, "inside_dir1");
+    dir1->createFile(1, 322, "inside_file1");
+    ASSERT_EQ(dir.information(), "Dirs in directory: dir1 dir2 \tFiles in directory: file1 \tOwnerId: 1, size: 0");
+    ASSERT_EQ(dir1->information(), "Dirs in directory: inside_dir1 \tFiles in directory: inside_file1 \tOwnerId: 1, size: 0");
+    auto inside_dir1 = dir1->subdir("inside_dir1");
+    inside_dir1->createFile(1, 34, "file3");
+    inside_dir1->createFile(1, 3331, "file4");
 
+    dir1->setPermissions(77);
+    dir1->copyDir(1, dir, "inside_dir1", "inside_dir1");
+    auto copied_inside_dir1 = dir.subdir("inside_dir1");
+    ASSERT_EQ(dir.information(), "Dirs in directory: dir1 dir2 inside_dir1 \tFiles in directory: file1 \tOwnerId: 1, size: 0");
+    ASSERT_EQ(dir1->information(), "Dirs in directory: inside_dir1 \tFiles in directory: inside_file1 \tOwnerId: 1, size: 0");
+    ASSERT_EQ(inside_dir1->information(), "Files in directory: file3 file4 \tOwnerId: 1, size: 0");
+    ASSERT_EQ(copied_inside_dir1->information(), "Files in directory: file3 file4 \tOwnerId: 1, size: 0");
 }
 
 int main(int argc, char *argv[]) {
