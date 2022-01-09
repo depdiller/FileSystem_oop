@@ -285,6 +285,26 @@ namespace System {
         }
         return it_toFile->getValue();
     }
+
+    void FileSystem::changePermissionsDir(const std::string &dirPath, unsigned int newPermissions) {
+        try {
+            Dir &toDir = *dirByPath(dirPath);
+            toDir.setPermissions(newPermissions);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    void FileSystem::changePermissionsFile(const std::string &filePath, unsigned int newPermissions) {
+        try {
+            File &file = *fileByPath(filePath);
+            file.setPermissions(newPermissions);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
 }
 
 namespace Additional {

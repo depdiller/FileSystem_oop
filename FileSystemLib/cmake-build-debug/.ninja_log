@@ -1,12 +1,14 @@
 # ninja log v5
-1	1071	1641714526675458154	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
+2	887	1641717602655650608	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
 3	587	1641560458814817740	CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o	55a9a94684317bb5
 2	778	1641684497185959788	CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o	c81ef73b7d2718bb
 3	827	1641684497235291756	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
 2	885	1641684497294431395	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
-2	580	1641714621660663702	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
+2	1209	1641717602976265028	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
 2	910	1641684497319462118	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
-2	497	1641715295013899275	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-498	527	1641715295045893000	libFileSystemLib.a	b6e2e545325bd601
-1	534	1641716133188149897	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-534	599	1641716133253385000	libFileSystemLib.a	b6e2e545325bd601
+2	987	1641717602746547827	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
+1209	1258	1641717603032164000	libFileSystemLib.a	b6e2e545325bd601
+2	934	1641718051990273521	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
+2	1102	1641718052159760973	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
+3	1430	1641718052484461600	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
+1430	1495	1641718052555979000	libFileSystemLib.a	b6e2e545325bd601

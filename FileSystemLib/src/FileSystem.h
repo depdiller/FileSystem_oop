@@ -144,6 +144,9 @@ namespace System {
         void recursiveLs(Dir *dir, std::string *buff);
 
         unsigned int controlVirtualMem();
+
+        void changePermissionsDir(const std::string &dirPath, unsigned int newPermissions);
+        void changePermissionsFile(const std::string &filePath, unsigned int newPermissions);
     };
 }
 namespace Additional {

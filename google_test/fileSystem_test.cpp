@@ -78,6 +78,13 @@ TEST(Dirs, DirsMethods) {
     ASSERT_EQ(sys.catFile("/usr/ivan/INFO_IVAN"), "New string");
     sys.editFile("/usr/ivan/INFO_IVAN", " from Ivan");
     ASSERT_EQ(sys.catFile("/usr/ivan/INFO_IVAN"), "New string from Ivan");
+
+    sys.setCurrDir("/usr");
+    sys.changePermissionsDir("/usr", 77);
+    sys.changePermissionsDir("/", 77);
+    sys.moveDir("ivan", "/");
+    std::cout << sys.infoSystem() << std::endl;
+    ASSERT_EQ(sys.catFile("/ivan/INFO_IVAN"), "New string from Ivan");
 }
 
 int main(int argc, char *argv[]) {
