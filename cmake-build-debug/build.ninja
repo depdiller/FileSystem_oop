@@ -74,7 +74,7 @@ build cmake_object_order_depends_target_FileSystem: phony || CMakeFiles/FileSyst
 
 build CMakeFiles/FileSystem.dir/main.cpp.o: CXX_COMPILER__FileSystem_Debug /Users/stanislavvoronov/oop/lab4/FileSystem_oop/main.cpp || cmake_object_order_depends_target_FileSystem
   DEP_FILE = CMakeFiles/FileSystem.dir/main.cpp.o.d
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   INCLUDES = -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/FileSystemLib/src -I/Users/stanislavvoronov/oop/lab4/FileSystem_oop/map/src
   OBJECT_DIR = CMakeFiles/FileSystem.dir
   OBJECT_FILE_DIR = CMakeFiles/FileSystem.dir

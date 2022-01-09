@@ -66,6 +66,13 @@ namespace System {
                 Dir *newDir = new Dir(currUserId, 66);
                 // скопировали в нее все из текущей
                 *newDir = *itThis->getValue();
+                // поставить зависимость внутренних папок и файлов на newDir
+                for (const auto& node : newDir->tableOfDirs) {
+                    const_cast<FileId&>(node.getKey()).setParent(newDir);
+                }
+                for (const auto& node : newDir->tableOfFiles) {
+                    const_cast<FileId&>(node.getKey()).setParent(newDir);
+                }
                 // вставили новую папку в toDir
                 toDir.tableOfDirs.insert(FileId(dirnameNew, &toDir), newDir);
             } else
@@ -107,6 +114,13 @@ namespace System {
                 Dir *newDir = new Dir(currUserId, 66);
                 // скопировали в нее все из текущей
                 *newDir = *itThisDir->getValue();
+                // поставить зависимость внутренних папок и файлов на newDir
+                for (const auto& node : newDir->tableOfDirs) {
+                    const_cast<FileId&>(node.getKey()).setParent(newDir);
+                }
+                for (const auto& node : newDir->tableOfFiles) {
+                    const_cast<FileId&>(node.getKey()).setParent(newDir);
+                }
                 // вставили новую папку в toDir
                 toDir.tableOfDirs.insert(FileId(dirnameNew, &toDir), newDir);
                 // удалить папку из папки, в которой была this

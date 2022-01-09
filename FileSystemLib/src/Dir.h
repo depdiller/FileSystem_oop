@@ -39,6 +39,10 @@ namespace System {
         bool operator<(const std::string &other) {
             return this->first < other;
         }
+        FileId &setParent(Dir *newParent) {
+            second = newParent;
+            return *this;
+        }
     };
 
     class Dir : public AbstractFile {
