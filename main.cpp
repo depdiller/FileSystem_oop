@@ -63,7 +63,7 @@ int main() {
                     break;
                 case 4: {
                     std::string filename;
-                    std::cout << "Enter name of new dir: ";
+                    std::cout << "Enter name of new file: ";
                     std::cin >> filename;
                     try {
                         sys.createFile(filename, sys.controlVirtualMem());
@@ -74,39 +74,137 @@ int main() {
                 }
                     break;
                 case 5: {
+                    std::string dirname;
+                    std::string path;
+                    std::cout << "Enter name of dir from current directory you want to move: ";
+                    std::cin >> dirname;
+                    std::cout << "Enter path to move to: ";
+                    std::cin >> path;
+                    try {
+                        sys.moveDir(dirname, path);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 6: {
+                    std::string filename;
+                    std::string path;
+                    std::cout << "Enter name of file from current directory you want to move: ";
+                    std::cin >> filename;
+                    std::cout << "Enter path to move to: ";
+                    std::cin >> path;
+                    try {
+                        sys.moveFile(filename, path);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 7: {
+                    std::string dirname;
+                    std::string path;
+                    std::cout << "Enter name of dir from current directory you want to copy: ";
+                    std::cin >> dirname;
+                    std::cout << "Enter path to copy to: ";
+                    std::cin >> path;
+                    try {
+                        sys.copyDir(dirname, path);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 8: {
+                    std::string filename;
+                    std::string path;
+                    std::cout << "Enter name of file from current directory you want to copy: ";
+                    std::cin >> filename;
+                    std::cout << "Enter path to copy to: ";
+                    std::cin >> path;
+                    try {
+                        sys.copyFile(filename, path);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 9: {
+                    std::string dirname;
+                    std::cout << "Enter name of dir from current directory you want to delete: ";
+                    std::cin >> dirname;
+                    try {
+                        sys.deleteDir(dirname);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 10: {
+                    std::string filename;
+                    std::cout << "Enter name of file from current directory you want to delete: ";
+                    std::cin >> filename;
+                    try {
+                        sys.deleteFile(filename);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 11: {
+                    std::string filePath;
+                    std::string data;
+                    std::cout << "Enter path to file: ";
+                    std::cin >> filePath;
+                    std::cout << "Enter data: ";
+                    std::cin >> data;
+                    try {
+                        sys.writeToFile(filePath, data);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 12: {
+                    std::string filePath;
+                    std::string toAdd;
+                    std::cout << "Enter path to file: ";
+                    std::cin >> filePath;
+                    std::cout << "Enter data to add to file: ";
+                    std::cin >> toAdd;
+                    try {
+                        sys.editFile(filePath, toAdd);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 13: {
+                    std::string filePath;
+                    std::cout << "Enter path to file: ";
+                    std::cin >> filePath;
+                    try {
+                        sys.catFile(filePath);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
                 }
                     break;
                 case 14: {
+                    std::cout << sys.infoSystem();
                 }
                     break;
                 case 15: {
-                }
-                    break;
-                case 16: {
+                    std::cout << sys.getCurrUser()->getName();
                 }
                     break;
                 default : {

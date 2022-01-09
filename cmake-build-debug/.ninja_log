@@ -11,9 +11,10 @@
 1	1603	1639554020407254001	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	3b827af2e2258661
 1	367	1640254982455099208	FileSystemLib/CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o	c0e5755bd007d96e
 1	514	1639554019318571938	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	3d88d6be538ab93e
-492	529	1640254982618513808	FileSystem	6ced959a8623a41
+483	544	1641724831942087868	FileSystem	d35e9fc2c0125b0f
 474	492	1640254982582318000	FileSystemLib/libFileSystemLib.a	e0ff169c484b6866
-1	264	1641418964957215597	CMakeFiles/FileSystem.dir/main.cpp.o	a19b7e7dc4ef7c70
+1	483	1641724831879433529	CMakeFiles/FileSystem.dir/main.cpp.o	7ce970ce361696a4
 1	455	1640254982542521082	FileSystemLib/CMakeFiles/FileSystemLib.dir/src/File.cpp.o	64c89c85ea3cf285
 0	22	1639554018830325233	google_test/CMakeFiles/google_test_run.dir/google_test.cpp.o	19293b39c8d5fc02
-0	36	1641721442881716536	build.ninja	507efab2a149b957
+0	36	1641724967614896429	build.ninja	507efab2a149b957
+1	52	1641724975941270738	FileSystem	d35e9fc2c0125b0f
