@@ -23,7 +23,7 @@
 #include <ctime>
 
 namespace System {
-    const unsigned int stdSize = 1024;
+    const unsigned int stdSize = 1024; ///< стандартный размер выделяемый под файл
     /**
      * \author Voronov Stanislav
      * \version 1.0
@@ -82,14 +82,14 @@ namespace System {
          * \throw invalid_argument отказ в доступе
          * @return указатель на файл в потоке
          */
-        std::pair<FILE*, const std::string&> open(FILE *file, unsigned int currUserId, const std::string& parameter);
+        FILE* open(FILE *file, unsigned int currUserId, const std::string& parameter);
         /**
          * \brief закрывает файл
          *
          * @param currSystemDisk указатель на текущий файл-диск
          * @return указатель на начало файла-диска
          */
-        FILE *close(FILE *currSystemDisk);
+//        FILE *close(FILE *currSystemDisk);
         /**
          * \brief записать информацию в файл
          *
@@ -97,7 +97,7 @@ namespace System {
          * @param data информация для записи в файл
          * \throw invalid_argument файл не открыт ни в каком потоке
          */
-        void writeToFile(std::pair<FILE*, const std::string&>, const std::string &data);
+        void writeToFile(FILE *openedStream, const std::string &data);
         // stringLength ~= size of bytes
         /**
          * \brief считывание информации из файла
@@ -107,14 +107,14 @@ namespace System {
          * \throw invalid_argument файл не открыт ни в каком потоке
          * @return строка с информацией из файла
          */
-        std::string readFile(std::pair<FILE*, const std::string&> streamAndOperation, size_t stringLength);
+        std::string readFile(FILE * openedStream, unsigned int stringLength);
         /**
          * \brief вывод содержимого файла на экран
          *
          * @param ptrFromOpen указатель на файл в потоке
          * \throw invalid_argument файл не открыт ни в каком потоке
          */
-        void cat(FILE *ptrFromOpen);
+        std::string cat(FILE *ptrFromOpen);
         // write additional line to file
         /**
          * \brief изменить содержимое файла (добавить информацию)

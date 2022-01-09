@@ -18,50 +18,78 @@ namespace System {
     /** currentSystemDisk придет при открытии файла через директорию, у которой будет
      * доступ к системе.
     */
-    std::pair<FILE *, const std::string &>
-    File::open(FILE *currentSystemDisk, unsigned int currUserId, const std::string &parameter) {
-        if (this->checkPermission(currUserId, parameter)) {
+    FILE *File::open(FILE *currentSystemDisk, unsigned int currUserId, const std::string &parameter) {
+        if (checkPermission(currUserId, parameter)) {
             FILE *tmpCopy = currentSystemDisk;
             unsigned int offset = this->TableOfStreams.find(std::string("MAIN"))->getVirtualAddress();
-            std::fseek(tmpCopy, offset, SEEK_CUR);
-            return std::make_pair(tmpCopy, parameter);
-        } else
-            throw std::invalid_argument("no access to such operation");
-    }
-
-    void File::writeToFile(std::pair<FILE *, const std::string &> streamAndOperation, const std::string &data) {
-        if (streamAndOperation.second == "w") {
-            if (this->size + data.size() <= stdSize)
-                std::fwrite(data.c_str(), sizeof(char), data.size(), streamAndOperation.first);
-            else
-                throw std::invalid_argument("exceeded standard size of file");
-        } else
-            throw std::invalid_argument("incorrect operation");
-    }
-
-    std::string File::readFile(std::pair<FILE *, const std::string &> streamAndOperation, size_t stringLength) {
-        if (streamAndOperation.second == "w") {
-            std::string myString(stringLength, '\0');
-            std::fread(&myString[0], sizeof(char), stringLength, streamAndOperation.first);
-            return myString;
-        } else
-            throw std::invalid_argument("incorrect operation");
-    }
-
-    void File::cat(FILE *ptrFromOpen) {
-        if (ptrFromOpen != nullptr) {
-            std::string myString(this->size, '\0');
-            fread(&myString[0], sizeof(char), this->size, ptrFromOpen);
-            std::cout << myString;
-        } else
-            throw std::invalid_argument("stream is not attached to file");
-    }
-
-    void File::editFile(FILE *ptrFromOpen, const std::string &toAdd) {
-        if (ptrFromOpen != nullptr)
-            std::fwrite(toAdd.c_str(), sizeof(char), toAdd.size(), ptrFromOpen);
+            std::fseek(tmpCopy, offset, SEEK_SET);
+            return tmpCopy;
+        }
         else
-            throw std::invalid_argument("stream is not attached to file");
+            throw std::invalid_argument("No access to open file");
+    }
+
+    void File::writeToFile(FILE *openedStream, const std::string &data) {
+        if (openedStream != nullptr) {
+            size = 0;
+            if (size + data.size() <= stdSize) {
+                size_t f = std::fwrite(data.c_str(), 1, data.size(), openedStream);
+                if (f != data.size())
+                    throw std::invalid_argument("Error during fwrite");
+                size += data.size();
+            }
+            else
+                throw std::invalid_argument("Exceeded standard size of file. Cannot write to file");
+        }
+        else {
+            throw std::invalid_argument("Stream is corrupted");
+        }
+    }
+
+    std::string File::readFile(FILE * openedStream, unsigned int stringLength) {
+        if (openedStream != nullptr) {
+            if (stringLength > size) {
+                throw std::invalid_argument("Exceeded size of file");
+            } else {
+                std::string myString(stringLength, '\0');
+                size_t f = std::fread(&myString[0], 1, (size_t)stringLength, openedStream);
+                if (f != stringLength)
+                    throw std::invalid_argument("Error during fread");
+                return myString;
+            }
+        }
+        else {
+            throw std::invalid_argument("Stream is corrupted");
+        }
+    }
+
+    std::string File::cat(FILE *openedStream) {
+        if (openedStream != nullptr) {
+            std::string myString(size, '\0');
+            size_t f = std::fread(&myString[0], 1, (size_t) size, openedStream);
+            if (f != (size_t)size)
+                throw std::invalid_argument("Error during fread");
+            return myString;
+        }
+        else {
+            throw std::invalid_argument("Stream is corrupted");
+        }
+    }
+
+    void File::editFile(FILE *openedStream, const std::string &toAdd) {
+        if (openedStream != nullptr) {
+            int status = std::fseek(openedStream, size, SEEK_CUR);
+            if (status != 0) {
+                throw std::invalid_argument("Error in fseek");
+            }
+            size_t f = std::fwrite(toAdd.c_str(), 1, toAdd.size(), openedStream);
+            if (f != toAdd.size())
+                throw std::invalid_argument("Error during fread");
+            size += toAdd.size();
+        }
+        else {
+            throw std::invalid_argument("Stream is corrupted");
+        }
     }
 
     std::string File::information() const {
@@ -84,8 +112,8 @@ namespace System {
     File::File() : AbstractFile(), TableOfStreams(), dateAndTime() {}
 
     File &File::setVritualAddress(unsigned int newAddress) {
-//        auto it = TableOfStreams.find("MAIN");
-//        it->setVirtualAddress(newAddress);
+//        auto it = TableOfStreams.find(std::string("MAIN"));
+//        it->getVirtualAddress() = newAddress;
         return *this;
     }
 

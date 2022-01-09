@@ -1,7 +1,8 @@
 #include "FileSystem.h"
 
 namespace System {
-    FileSystem::FileSystem(FILE *associatedFile, const std::string& username) : currentDir(nullptr), root(1, 66) {
+    FileSystem::FileSystem(FILE *associatedFile, const std::string& username) : currentDir(nullptr),
+    root(1, 66), freeSpace() {
         if (associatedFile != nullptr) {
             currentDir = &root;
             disk = associatedFile;
@@ -10,6 +11,7 @@ namespace System {
                 currUser = tableOfUsers.begin();
             else
                 currUser = tableOfUsers.insert(User(username)).first;
+            multForAddresses = 0;
         }
         else
             throw std::invalid_argument("cannot associate with this file");
@@ -118,6 +120,12 @@ namespace System {
     void FileSystem::deleteFile(const std::string &filename) {
         try {
             currentDir->deleteFile(currUser->getUserId(), filename);
+
+            auto it = currentDir->getTableOfFiles().find(FileId(filename, currentDir));
+            if (it != currentDir->getTableOfFiles().end()) {
+                freeSpace.push_back(it->getValue()->getStreams().find(std::string("MAIN"))->getVirtualAddress());
+            }
+            // else не нужен, тк если бы файла не было, исключение бы выкинулось до
         }
         catch (std::invalid_argument &msg) {
             throw;
@@ -200,7 +208,82 @@ namespace System {
     }
 
     unsigned int FileSystem::controlVirtualMem() {
+        unsigned int address;
+        if (!freeSpace.empty()) {
+            address = freeSpace.back();
+            freeSpace.pop_back();
+        }
+        else {
+            address = stdSize * multForAddresses;
+        }
+        return address;
+    }
 
+    void FileSystem::writeToFile(const std::string &filePath, const std::string &data) {
+        try {
+            File &file = *fileByPath(filePath);
+            FILE *stream = file.open(disk, currUser->getUserId(), "w");
+            file.writeToFile(stream, data);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    std::string FileSystem::catFile(const std::string &filePath) {
+        try {
+            File &file = *fileByPath(filePath);
+            FILE *stream = file.open(disk, currUser->getUserId(), "r");
+            return file.cat(stream);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    std::string FileSystem::readFile(const std::string &filePath, unsigned int charsToRead) {
+        try {
+            File &file = *fileByPath(filePath);
+            FILE *stream = file.open(disk, currUser->getUserId(), "r");
+            return file.readFile(stream, charsToRead);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    void FileSystem::editFile(const std::string &filePath, const std::string &dataToAdd) {
+        try {
+            File &file = *fileByPath(filePath);
+            FILE *stream = file.open(disk, currUser->getUserId(), "w");
+            return file.editFile(stream, dataToAdd);
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    File *FileSystem::fileByPath(const std::string &filePath) {
+        if (filePath[0] != '/') {
+            throw std::invalid_argument("Incorrect path");
+        }
+        Dir *ptr_toDir = &root;
+        std::vector<std::string> path;
+        Additional::split(filePath, '/', path);
+        std::string filename = path.back();
+        path.pop_back();
+        for (const std::string &dirname: path) {
+            auto it = ptr_toDir->getTableOfDirs().find(FileId(dirname, ptr_toDir));
+            if (it == ptr_toDir->getTableOfDirs().end()) {
+                throw std::invalid_argument("No such dir");
+            }
+            ptr_toDir = it->getValue();
+        }
+        auto it_toFile = ptr_toDir->getTableOfFiles().find(FileId(filename, ptr_toDir));
+        if (it_toFile == ptr_toDir->getTableOfFiles().end()) {
+            throw std::invalid_argument("No such file");
+        }
+        return it_toFile->getValue();
     }
 }
 

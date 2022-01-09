@@ -58,7 +58,7 @@ TEST(Exceptions, AllExceptions) {
 
 TEST(Dirs, DirsMethods) {
     FILE *associatedFile;
-    associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "r");
+    associatedFile = fopen("/Users/stanislavvoronov/oop/lab4/disk", "wb+");
     FileSystem sys(associatedFile);
 
     sys.createDir("usr");
@@ -69,9 +69,15 @@ TEST(Dirs, DirsMethods) {
     sys.createDir("ivan");
     sys.setCurrDir("/usr/ivan");
     sys.createFile("INFO_IVAN", 143);
-    sys.setCurrDir("/");
-    sys.createDir("tmp");
-    std::cout << sys.infoSystem();
+    sys.writeToFile("/usr/ivan/INFO_IVAN", "Hello, world");
+    ASSERT_EQ(sys.catFile("/usr/ivan/INFO_IVAN"), "Hello, world");
+    ASSERT_EQ(sys.readFile("/usr/ivan/INFO_IVAN", 2), "He");
+    ASSERT_EQ(sys.readFile("/usr/ivan/INFO_IVAN", 12), "Hello, world");
+    EXPECT_ANY_THROW(sys.readFile("/usr/ivan/INFO_IVAN", 20));
+    sys.writeToFile("/usr/ivan/INFO_IVAN", "New string");
+    ASSERT_EQ(sys.catFile("/usr/ivan/INFO_IVAN"), "New string");
+    sys.editFile("/usr/ivan/INFO_IVAN", " from Ivan");
+    ASSERT_EQ(sys.catFile("/usr/ivan/INFO_IVAN"), "New string from Ivan");
 }
 
 int main(int argc, char *argv[]) {

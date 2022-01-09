@@ -35,6 +35,8 @@ namespace System {
         Dir *currentDir;
         std::set<User> tableOfUsers; ///< таблица пользователей файловой системы
         std::set<User>::iterator currUser; ///< текущий пользователь файловой системы
+        unsigned int multForAddresses;
+        std::vector<unsigned int> freeSpace;
     public:
         /**
          * \brief стандартный конструктор
@@ -112,6 +114,7 @@ namespace System {
 
         // изменяет текущую папку, то есь по указателю можно сразу иметь доступ к текущей папке
         Dir *dirByPath(const std::string &dirPath);
+        File *fileByPath(const std::string &filePath);
         // создает папку в currentDir
         void createDir(const std::string &dirname);
 
@@ -128,6 +131,14 @@ namespace System {
         void copyDir(const std::string &dirname, const std::string &path);
 
         void copyFile(const std::string &filename, const std::string &path);
+
+        void writeToFile(const std::string &filePath, const std::string &data);
+
+        std::string readFile(const std::string &filePath, unsigned int charsToRead);
+
+        void editFile(const std::string &filePath, const std::string &dataToAdd);
+
+        std::string catFile(const std::string &filePath);
 
         std::string infoSystem();
         void recursiveLs(Dir *dir, std::string *buff);
