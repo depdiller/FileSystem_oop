@@ -37,7 +37,9 @@ namespace System {
         std::set<User>::iterator currUser; ///< текущий пользователь файловой системы
         unsigned int multForAddresses;
         std::vector<unsigned int> freeSpace;
+        std::string pwd;
     public:
+        const std::string &getPwd() const { return pwd; }
         /**
          * \brief стандартный конструктор
          */
@@ -118,7 +120,7 @@ namespace System {
         // создает папку в currentDir
         void createDir(const std::string &dirname);
 
-        void createFile(const std::string &filename, unsigned );
+        void createFile(const std::string &filename, unsigned int);
 
         void deleteDir(const std::string &dirname);
 

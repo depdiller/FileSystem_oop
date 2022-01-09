@@ -2,7 +2,7 @@
 
 namespace System {
     FileSystem::FileSystem(FILE *associatedFile, const std::string& username) : currentDir(nullptr),
-    root(1, 66), freeSpace() {
+    root(1, 66), freeSpace(), pwd() {
         if (associatedFile != nullptr) {
             currentDir = &root;
             disk = associatedFile;
@@ -12,6 +12,7 @@ namespace System {
             else
                 currUser = tableOfUsers.insert(User(username)).first;
             multForAddresses = 0;
+            pwd = "/";
         }
         else
             throw std::invalid_argument("cannot associate with this file");
@@ -176,6 +177,7 @@ namespace System {
     FileSystem &FileSystem::setCurrDir(const std::string &path) {
         try {
             currentDir = dirByPath(path);
+            pwd = path;
         }
         catch (std::invalid_argument &msg) {
             throw;
