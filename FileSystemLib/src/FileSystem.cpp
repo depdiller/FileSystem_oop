@@ -307,6 +307,27 @@ namespace System {
             throw;
         }
     }
+
+    std::string FileSystem::infoFile(const std::string &filePath){
+        try {
+            File &file = *fileByPath(filePath);
+            return file.information();
+        }
+        catch (std::invalid_argument &msg) {
+            throw;
+        }
+    }
+
+    std::string FileSystem::tableOfUserInfo() {
+        char name[100];
+        std::string final;
+        final.append("Users: ");
+        for (auto const &user : tableOfUsers) {
+            snprintf(name, sizeof(name), "%s ", user.getName().c_str());
+            final.append(name);
+        }
+        return final;
+    }
 }
 
 namespace Additional {

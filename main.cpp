@@ -5,18 +5,18 @@ int getNum(T &a);
 
 int main() {
     FILE *associatedFile;
-    associatedFile = fopen("C:\\disk.txt", "wb+");
+    associatedFile = fopen("C:\\disk.txt", "r+");
     if (associatedFile != nullptr) {
         System::FileSystem sys(associatedFile);
         int choice;
         while (true) {
             std::cout << "\n\n";
             std::cout << "Choose options: " << std::endl
-                      << "0. Exit" << std::endl
+                      << "0. exit" << std::endl
                       << "1. pwd" << std::endl
                       << "2. cd" << std::endl
                       << "3. create dir in current directory" << std::endl
-                      << "4. create file in current directory"<< std::endl
+                      << "4. create file in current directory" << std::endl
                       << "5. move dir from current directory" << std::endl
                       << "6. move file from current directory" << std::endl
                       << "7. copy dir from current directory" << std::endl
@@ -27,9 +27,11 @@ int main() {
                       << "12. edit file" << std::endl
                       << "13. cat file" << std::endl
                       << "14. info about system" << std::endl
-                      << "15. print current user" << std::endl;
-            // if (getNum(choice) == 1)
-            std::cin >> choice;
+                      << "15. print current user" << std::endl
+                      << "16. info about file" << std::endl
+                      << "17. login as another user" << std::endl
+                      << "18. print table of users" << std::endl;
+            getNum(choice);
             if (choice == 0)
                 break;
             switch (choice) {
@@ -192,7 +194,7 @@ int main() {
                     std::cout << "Enter path to file: ";
                     std::cin >> filePath;
                     try {
-                        sys.catFile(filePath);
+                        std::cout << sys.catFile(filePath);
                     }
                     catch (std::invalid_argument &msg) {
                         std::cout << msg.what() << std::endl;
@@ -205,6 +207,29 @@ int main() {
                     break;
                 case 15: {
                     std::cout << sys.getCurrUser()->getName();
+                }
+                    break;
+                case 16: {
+                    std::string filePath;
+                    std::cout << "Enter path of your file: ";
+                    std::cin >> filePath;
+                    std::cout << sys.infoFile(filePath);
+                }
+                    break;
+                case 17: {
+                    std::string username;
+                    std::cout << "Enter username: ";
+                    std:: cin >> username;
+                    try {
+                        sys.login(username);
+                    }
+                    catch (std::invalid_argument &msg) {
+                        std::cout << msg.what() << std::endl;
+                    }
+                }
+                    break;
+                case 18: {
+                    std::cout << sys.tableOfUserInfo();
                 }
                     break;
                 default : {

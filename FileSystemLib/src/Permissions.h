@@ -40,6 +40,7 @@ namespace System {
          * @return можно или нет
          */
         bool isExecutable() const { return execute; }
+        std::string inText() const;
     };
 
     /**
@@ -74,6 +75,7 @@ namespace System {
          */
         std::array<rwx, 2> getPermissions() const { return uoPermissions; }
         Permissions &operator=(const Permissions &other);
+        std::string info() const;
     };
 }
 

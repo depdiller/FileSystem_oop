@@ -127,6 +127,7 @@ namespace System {
          * \brief перегрузка родительского метода, выводит информацию о папке
          */
         std::string information () const override;
+        std::string permissionInfo() const;
     };
 
     // additional outside functions

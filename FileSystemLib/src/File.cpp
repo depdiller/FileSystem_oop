@@ -8,6 +8,7 @@ namespace System {
     File::File(unsigned int fileVirtualAddress, unsigned int ownerId, unsigned int uoPermissions) : AbstractFile(ownerId,
                                                                                                         uoPermissions) {
         TableOfStreams.insert(Descriptor("MAIN", fileVirtualAddress));
+        dateAndTime = currentDateTime();
     }
 
     File &File::setDateAndTime(std::string updateTime) {
@@ -37,6 +38,7 @@ namespace System {
                 if (f != data.size())
                     throw std::invalid_argument("Error during fwrite");
                 size += data.size();
+                setDateAndTime(currentDateTime());
             }
             else
                 throw std::invalid_argument("Exceeded standard size of file. Cannot write to file");
@@ -86,6 +88,7 @@ namespace System {
             if (f != toAdd.size())
                 throw std::invalid_argument("Error during fread");
             size += toAdd.size();
+            setDateAndTime(currentDateTime());
         }
         else {
             throw std::invalid_argument("Stream is corrupted");
@@ -94,8 +97,8 @@ namespace System {
 
     std::string File::information() const {
         char buff[100];
-        snprintf(buff, sizeof(buff), "OwnerId: %d, last changes: %s, size: %zu",
-                 ownerId, this->dateAndTime.c_str(), size);
+        snprintf(buff, sizeof(buff), "OwnerId: %d, last changes: %s, size: %zu\n%s",
+                 ownerId, this->dateAndTime.c_str(), size, permissionInfo().c_str());
         std::string buffAsStdStr = buff;
         return buff;
     }
@@ -115,6 +118,10 @@ namespace System {
 //        auto it = TableOfStreams.find(std::string("MAIN"));
 //        it->getVirtualAddress() = newAddress;
         return *this;
+    }
+
+    std::string File::permissionInfo() const {
+        return getPermissions().info();
     }
 
     std::string currentDateTime() {

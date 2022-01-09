@@ -1,14 +1,13 @@
 # ninja log v5
-1	1163	1641721062053951689	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
-3	587	1641560458814817740	CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o	55a9a94684317bb5
-2	778	1641684497185959788	CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o	c81ef73b7d2718bb
-2	1148	1641721062039669991	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
-2	1259	1641721062151428590	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
-2	1738	1641721062630095849	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
-2	1312	1641721062201951373	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
-2	1376	1641721062255028469	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-1738	1837	1641721062730350000	libFileSystemLib.a	b6e2e545325bd601
-1	702	1641724961915981409	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
-2	805	1641724962019866844	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
-2	968	1641724962182946466	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
-968	1006	1641724962224408000	libFileSystemLib.a	b6e2e545325bd601
+2	895	1641731197681135373	CMakeFiles/FileSystemLib.dir/src/AbstractFile.cpp.o	a6cd1b7726d9b800
+2	441	1641730486723428019	CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o	55a9a94684317bb5
+2	1470	1641729140033738275	CMakeFiles/FileSystemLib.dir/src/Descriptor.cpp.o	c81ef73b7d2718bb
+5	1562	1641729140126651207	CMakeFiles/FileSystemLib.dir/src/User.cpp.o	aa03848cebac2dad
+2	1608	1641729140172458344	CMakeFiles/FileSystemLib.dir/src/EncryptFile.cpp.o	88c5fb34d9e5be8b
+2	956	1641731265243534603	CMakeFiles/FileSystemLib.dir/src/FileSystem.cpp.o	996e1168e00f9c0d
+2	1666	1641729140231078536	CMakeFiles/FileSystemLib.dir/src/Dir.cpp.o	1eba45f405c2b76
+2	1150	1641731197935515424	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
+956	1025	1641731265319638000	libFileSystemLib.a	b6e2e545325bd601
+1	359	1641731714226278519	CMakeFiles/FileSystemLib.dir/src/Permissions.cpp.o	55a9a94684317bb5
+1	480	1641731714347604152	CMakeFiles/FileSystemLib.dir/src/File.cpp.o	d8f280ceed5be0c
+480	510	1641731714380179000	libFileSystemLib.a	b6e2e545325bd601

@@ -14,6 +14,13 @@ namespace System {
         execute = (codePermission & 0b001) == 1;
     }
 
+    std::string rwx::inText() const {
+        char buff[100];
+        snprintf(buff, sizeof(buff), "read: %d\twrite: %d\texecute: %d", read, write, execute);
+        std::string buffAsStdStr = buff;
+        return buff;
+    }
+
     // permissions constructors
     Permissions::Permissions(unsigned int codePermissions) {
         if (codePermissions > 77 || codePermissions < 0)
@@ -41,5 +48,16 @@ namespace System {
             this->uoPermissions = other.uoPermissions;
         }
         return *this;
+    }
+
+    std::string Permissions::info() const {
+        std::string final;
+        char buff1[1024];
+        char buff2[1024];
+        snprintf(buff1, sizeof(buff1), "User: %s\n", uoPermissions[0].inText().c_str());
+        final.append(buff1);
+        snprintf(buff2, sizeof(buff2), "Other: %s", uoPermissions[1].inText().c_str());
+        final.append(buff2);
+        return final;
     }
 }
